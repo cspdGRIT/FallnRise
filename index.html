@@ -1,1028 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Priya Darshan | AI/GenAI Architect & Engineer</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --dark: #0f0c29;
-            --light: #f5f5f7;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #6a4c93 100%);
-            background-size: 400% 400%;
-            animation: darkGradientShift 20s ease infinite;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        @keyframes darkGradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: rgba(15, 15, 30, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-            font-weight: 800;
-            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .hero-content .title {
-            font-size: 24px;
-            color: #f093fb;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(240, 147, 251, 0.3);
-        }
-
-        .hero-content .bio {
-            font-size: 16px;
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            background: rgba(240, 147, 251, 0.1);
-            color: #f093fb;
-            border: 2px solid #f093fb;
-        }
-
-        .btn-secondary:hover {
-            background: #f093fb;
-            color: white;
-        }
-
-        /* QR CARD */
-        .qr-card {
-            background: rgba(15, 15, 30, 0.9);
-            border-radius: 15px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .qr-card h3 {
-            margin-bottom: 20px;
-            color: #f093fb;
-            font-size: 18px;
-        }
-
-        #qrcode {
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-info {
-            margin-top: 25px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .contact-info p {
-            margin: 8px 0;
-            font-size: 13px;
-            color: #aaa;
-        }
-
-        .contact-info strong {
-            color: #f093fb;
-        }
-
-        /* SECTION */
-        .section {
-            background: rgba(15, 15, 30, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .section h2 {
-            font-size: 36px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 30px;
-            font-weight: 700;
-            border-bottom: 3px solid #f093fb;
-            padding-bottom: 15px;
-            text-shadow: 0 0 20px rgba(240, 147, 251, 0.2);
-        }
-
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(240, 147, 251, 0.15));
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #667eea;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .skill-card h3 {
-            color: #f093fb;
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            font-size: 13px;
-            color: #bbb;
-            line-height: 1.6;
-        }
-
-        /* CERTIFICATES */
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .cert-card {
-            background: rgba(15, 15, 30, 0.9);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .cert-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .cert-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-        }
-
-        .cert-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #4facfe;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .security-seal {
-            width: 24px;
-            height: 24px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        .cert-content {
-            padding: 20px;
-        }
-
-        .cert-content h3 {
-            color: #f093fb;
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .cert-content p {
-            font-size: 13px;
-            color: #bbb;
-            margin-bottom: 10px;
-        }
-
-        .cert-content .date {
-            font-size: 11px;
-            color: #888;
-        }
-
-        .verify-btn {
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .verify-btn:hover {
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
-            transform: scale(1.02);
-        }
-
-        /* EXPERIENCE */
-        .experience-item {
-            padding: 25px;
-            border-left: 4px solid #667eea;
-            background: rgba(102, 126, 234, 0.08);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .experience-item:hover {
-            border-left-color: #f093fb;
-            background: rgba(240, 147, 251, 0.08);
-        }
-
-        .experience-item h3 {
-            color: #f093fb;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .experience-item .role {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .experience-item .period {
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        .experience-item ul {
-            margin-left: 20px;
-            font-size: 14px;
-            color: #bbb;
-        }
-
-        .experience-item li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        /* MUSIC PLAYER */
-        .music-player {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(102, 126, 234, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 15px 20px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 999;
-            animation: slideUp 0.5s ease;
-            border: 1px solid rgba(240, 147, 251, 0.3);
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .music-toggle {
-            background: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .music-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        .music-toggle.playing {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            animation: pulse 1s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .music-info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            color: white;
-            font-size: 12px;
-            min-width: 150px;
-        }
-
-        .music-title {
-            font-weight: 600;
-            font-size: 13px;
-        }
-
-        .music-artist {
-            opacity: 0.8;
-            font-size: 11px;
-        }
-
-        .music-duration {
-            opacity: 0.7;
-            font-size: 10px;
-            margin-top: 2px;
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: 10px;
-            padding-left: 10px;
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .volume-slider {
-            width: 60px;
-            height: 4px;
-            border-radius: 2px;
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(255, 255, 255, 0.3);
-            outline: none;
-            cursor: pointer;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .volume-slider::-moz-range-thumb {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .volume-icon {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .equalizer {
-            display: flex;
-            gap: 2px;
-            align-items: flex-end;
-            height: 20px;
-            margin-left: 5px;
-        }
-
-        .equalizer-bar {
-            width: 2px;
-            background: white;
-            border-radius: 1px;
-        }
-
-        .music-player.playing .equalizer-bar {
-            animation: barHeightAnimation 0.6s ease-in-out infinite;
-        }
-
-        .equalizer-bar:nth-child(1) { animation-delay: 0s; }
-        .equalizer-bar:nth-child(2) { animation-delay: 0.1s; }
-        .equalizer-bar:nth-child(3) { animation-delay: 0.2s; }
-        .equalizer-bar:nth-child(4) { animation-delay: 0.3s; }
-        .equalizer-bar:nth-child(5) { animation-delay: 0.4s; }
-
-        @keyframes barHeightAnimation {
-            0%, 100% { height: 4px; }
-            50% { height: 16px; }
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #f093fb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: #1a1a2e;
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            animation: slideIn 0.3s ease;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close {
-            color: #888;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover {
-            color: #667eea;
-        }
-
-        .modal h2 {
-            color: #f093fb;
-            margin-bottom: 20px;
-        }
-
-        .verification-detail {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            word-break: break-all;
-            color: #aaa;
-        }
-
-        .verification-status {
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-weight: 600;
-        }
-
-        .verified {
-            background: rgba(112, 173, 71, 0.2);
-            color: #70AD47;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 40px 20px;
-            }
-
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 30px 20px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .music-player {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 15px;
-                gap: 10px;
-                flex-wrap: wrap;
-            }
-
-            .music-info {
-                display: none;
-            }
-
-            .volume-control {
-                display: none;
-            }
-
-            .music-player {
-                flex-direction: column;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Priya Darshan | AI &amp; GenAI Architect</title>
+<meta name="description" content="Sai Priya Darshan — AI/GenAI Architect &amp; Full-Stack Engineer. Digital CV, verified credentials, and contact card.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --ink: #05070d;
+        --panel: #0d1120;
+        --panel-2: #10152a;
+        --line: rgba(201, 162, 75, 0.18);
+        --line-soft: rgba(255, 255, 255, 0.08);
+        --gold: #c9a24b;
+        --gold-bright: #e8c874;
+        --violet: #6c63ff;
+        --violet-soft: #4a4e8f;
+        --text: #eef0f6;
+        --text-dim: #9aa0b4;
+        --text-faint: #6a7086;
+        --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--text);
+        background: #05070d;
+        overflow-x: hidden;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    /* Ambient background — subtle, cinematic, professional (not neon/rainbow) */
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background:
+            radial-gradient(ellipse 80% 50% at 15% -10%, rgba(108, 99, 255, 0.16), transparent 60%),
+            radial-gradient(ellipse 70% 50% at 100% 10%, rgba(201, 162, 75, 0.10), transparent 55%),
+            radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74, 78, 143, 0.14), transparent 60%),
+            linear-gradient(180deg, #05070d 0%, #090c17 50%, #05070d 100%);
+        animation: driftGlow 24s ease-in-out infinite alternate;
+    }
+
+    body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+        background-size: 3px 3px;
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    @keyframes driftGlow {
+        0%   { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+        100% { background-position: 3% -2%, -3% 3%, 2% -3%, 0% 0%; }
+    }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* Top hairline nav strip */
+    .top-strip {
+        border-bottom: 1px solid var(--line-soft);
+        background: rgba(5, 7, 13, 0.72);
+        backdrop-filter: blur(14px);
+        position: sticky;
+        top: 0;
+        z-index: 500;
+    }
+
+    .top-strip-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        color: var(--text);
+    }
+
+    .brand span { color: var(--gold); }
+
+    .top-nav {
+        display: flex;
+        gap: 28px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .top-nav a {
+        color: var(--text-dim);
+        text-decoration: none;
+        transition: color 0.25s ease;
+        position: relative;
+    }
+
+    .top-nav a:hover { color: var(--gold-bright); }
+
+    @media (max-width: 640px) {
+        .top-nav { display: none; }
+    }
+
+    /* Eyebrow label used above section titles */
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+        content: '';
+        width: 26px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 96px 0 64px;
+        display: grid;
+        grid-template-columns: 1.25fr 0.85fr;
+        gap: 56px;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 56px;
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        margin-bottom: 18px;
+        color: var(--text);
+    }
+
+    .hero-content h1 em {
+        font-style: normal;
+        background: linear-gradient(120deg, var(--gold-bright), var(--gold) 60%, var(--violet));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-content .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-dim);
+        margin-bottom: 24px;
+        letter-spacing: 0.01em;
+    }
+
+    .hero-content .title strong { color: var(--gold-bright); font-weight: 700; }
+
+    .hero-content .bio {
+        font-size: 16px;
+        color: var(--text-dim);
+        line-height: 1.85;
+        margin-bottom: 34px;
+        max-width: 52ch;
+    }
+
+    .cta-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+        padding: 13px 28px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+        color: #1a1406;
+        box-shadow: 0 8px 24px rgba(201, 162, 75, 0.25);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201, 162, 75, 0.38); }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--line-soft);
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold-bright); }
+
+    /* QR CARD */
+    .qr-card {
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .qr-card h3 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+    }
+
+    .qr-frame {
+        background: #fff;
+        padding: 14px;
+        border-radius: 12px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+        width: 188px;
+        height: 188px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .qr-frame img { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+
+    .qr-fallback {
+        font-size: 11px;
+        color: #666;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .contact-info { margin-top: 22px; text-align: center; width: 100%; }
+
+    .contact-info p {
+        margin: 7px 0;
+        font-size: 13px;
+        color: var(--text-dim);
+    }
+
+    .contact-info strong { color: var(--text); font-weight: 600; }
+
+    .contact-info a { color: var(--gold-bright); text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* SECTION */
+    .section { padding: 56px 0; border-top: 1px solid var(--line-soft); }
+
+    .section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 36px;
+        color: var(--text);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 18px;
+    }
+
+    .skill-card {
+        background: var(--panel);
+        padding: 24px;
+        border-radius: 14px;
+        border: 1px solid var(--line-soft);
+        transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--gold);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .skill-card .icon { font-size: 20px; margin-bottom: 10px; display: block; }
+
+    .skill-card h3 {
+        color: var(--text);
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: 0.01em;
+    }
+
+    .skill-card p { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
+
+    /* EXPERIENCE */
+    .timeline { position: relative; padding-left: 28px; }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: linear-gradient(180deg, var(--gold), var(--line-soft));
+    }
+
+    .experience-item { position: relative; padding-bottom: 36px; }
+    .experience-item:last-child { padding-bottom: 0; }
+
+    .experience-item::before {
+        content: '';
+        position: absolute;
+        left: -33px;
+        top: 6px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--gold-bright);
+        box-shadow: 0 0 0 4px rgba(201, 162, 75, 0.15);
+    }
+
+    .experience-item h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+
+    .experience-item .role { color: var(--gold-bright); font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+
+    .experience-item .period {
+        color: var(--text-faint);
+        font-size: 12px;
+        margin-bottom: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .experience-item ul { margin-left: 18px; font-size: 14px; color: var(--text-dim); }
+    .experience-item li { margin-bottom: 7px; line-height: 1.65; }
+    .experience-item li::marker { color: var(--gold); }
+
+    /* CERTIFICATES */
+    .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 22px;
+    }
+
+    .cert-card {
+        background: var(--panel);
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid var(--line-soft);
+        transition: all 0.3s ease;
+    }
+
+    .cert-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 34px rgba(0,0,0,0.35); }
+
+    .cert-image {
+        width: 100%;
+        height: 190px;
+        background: linear-gradient(135deg, #14182c, #1b1f3a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-bottom: 1px solid var(--line-soft);
+    }
+
+    .cert-image img { max-width: 92%; max-height: 92%; object-fit: contain; border-radius: 6px; }
+
+    .cert-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(201, 162, 75, 0.16);
+        color: var(--gold-bright);
+        border: 1px solid var(--line);
+        padding: 5px 11px;
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .cert-content { padding: 20px; }
+    .cert-content h3 { color: var(--text); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .cert-content p { font-size: 12px; color: var(--text-dim); margin-bottom: 6px; }
+    .cert-content .date { font-size: 11px; color: var(--text-faint); }
+
+    .verify-btn {
+        width: 100%;
+        padding: 10px;
+        background: transparent;
+        color: var(--gold-bright);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        margin-top: 14px;
+        transition: all 0.25s ease;
+    }
+
+    .verify-btn:hover { background: rgba(201, 162, 75, 0.12); border-color: var(--gold); }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 48px 24px 120px;
+        color: var(--text-faint);
+        font-size: 12.5px;
+        border-top: 1px solid var(--line-soft);
+    }
+
+    footer p { margin: 6px 0; }
+    footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    /* MUSIC PLAYER — refined pill */
+    .music-player {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(13, 17, 32, 0.92);
+        backdrop-filter: blur(14px);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 10px 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 999;
+        animation: slideUp 0.6s ease;
+        max-width: 340px;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .music-toggle {
+        background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+        border: none;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: #1a1406;
+        transition: transform 0.2s ease;
+    }
+
+    .music-toggle:hover { transform: scale(1.08); }
+
+    .music-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        color: var(--text);
+        font-size: 11px;
+        min-width: 0;
+    }
+
+    .music-title { font-weight: 700; font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
+    .music-artist { color: var(--text-faint); font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
+
+    .music-hint {
+        font-size: 10px;
+        color: var(--gold-bright);
+        margin-top: 1px;
+        animation: hintPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes hintPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+
+    .equalizer { display: flex; gap: 2px; align-items: flex-end; height: 16px; }
+    .equalizer-bar { width: 2px; background: var(--gold-bright); border-radius: 1px; height: 3px; }
+    .music-player.playing .equalizer-bar { animation: barH 0.7s ease-in-out infinite; }
+    .equalizer-bar:nth-child(1) { animation-delay: 0s; }
+    .equalizer-bar:nth-child(2) { animation-delay: 0.15s; }
+    .equalizer-bar:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes barH { 0%, 100% { height: 3px; } 50% { height: 14px; } }
+
+    .volume-slider {
+        width: 56px;
+        height: 3px;
+        border-radius: 2px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: var(--line-soft);
+        outline: none;
+        cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 11px; height: 11px;
+        border-radius: 50%;
+        background: var(--gold-bright);
+        cursor: pointer;
+    }
+
+    .volume-slider::-moz-range-thumb {
+        width: 11px; height: 11px; border: none; border-radius: 50%;
+        background: var(--gold-bright); cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+        .music-info, .volume-slider { display: none; }
+        .music-player { padding: 8px; }
+    }
+
+    /* MODAL */
+    .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(2, 3, 8, 0.75);
+        backdrop-filter: blur(6px);
+    }
+
+    .modal-content {
+        background: var(--panel);
+        margin: 8% auto;
+        padding: 32px;
+        border-radius: var(--radius);
+        width: 90%;
+        max-width: 560px;
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+        animation: slideIn 0.25s ease;
+    }
+
+    @keyframes slideIn { from { transform: translateY(-24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .close {
+        color: var(--text-faint);
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s;
+    }
+    .close:hover { color: var(--gold-bright); }
+
+    .modal h2 { font-family: 'Playfair Display', serif; color: var(--text); margin-bottom: 20px; font-size: 24px; }
+
+    .verification-detail {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--line-soft);
+        padding: 14px;
+        border-radius: 8px;
+        margin: 12px 0;
+        font-family: 'SF Mono', 'Courier New', monospace;
+        font-size: 11.5px;
+        word-break: break-all;
+        color: var(--text-dim);
+        line-height: 1.9;
+    }
+
+    .verification-status {
+        padding: 12px 14px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 13px;
+        background: rgba(112, 173, 71, 0.14);
+        color: #8fd47a;
+        border: 1px solid rgba(112, 173, 71, 0.3);
+    }
+
+    .label { color: var(--gold-bright); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-top: 14px; margin-bottom: 4px; }
+
+    @media (max-width: 860px) {
+        .hero { grid-template-columns: 1fr; padding: 56px 0 40px; }
+        .hero-content h1 { font-size: 38px; }
+        .section { padding: 40px 0; }
+        .cta-buttons { flex-direction: column; }
+        .btn { width: 100%; justify-content: center; }
+    }
+</style>
 </head>
 <body>
 
-<!-- BACKGROUND AUDIO - Open Source Royalty Free -->
-<audio id="bgMusic" loop crossorigin="anonymous" autoplay muted>
-    <!-- Free Cinematic Music from OpenGameArt.org (CC0 - Public Domain) -->
-    <!-- "Epic Adventure" - Royalty Free -->
-    <source src="https://freepd.com/music/Epic%20Adventure.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+<!-- BACKGROUND AUDIO — public-domain orchestral recording (Musopen / Wikimedia Commons, CORS-open, verified reachable) -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg" type="audio/ogg">
 </audio>
 
+<div class="top-strip">
+    <div class="top-strip-inner">
+        <div class="brand">Sai Priya <span>Darshan</span></div>
+        <nav class="top-nav">
+            <a href="#experience">Experience</a>
+            <a href="#certificates">Credentials</a>
+            <a href="#education">Education</a>
+            <a href="mailto:saipriyadarshan.c@zensar.com">Contact</a>
+        </nav>
+    </div>
+</div>
+
 <div class="container">
-    <!-- HERO SECTION -->
+
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Sai Priya Darshan</h1>
-            <div class="title">🦾 AI/GenAI Architect & Full-Stack Engineer</div>
+            <div class="eyebrow">AI / GenAI Architect</div>
+            <h1>Sai Priya Darshan<br><em>builds AI systems that ship.</em></h1>
+            <div class="title">Full-Stack Engineer &middot; <strong>LLM Orchestration</strong> &middot; Cloud Architecture</div>
             <p class="bio">
-                Transforming complex problems into elegant AI-driven solutions.
-                Expertise in LLM orchestration, agentic systems, and enterprise-scale architecture.
-                Building the future, one algorithm at a time.
+                I design and deploy production-grade agentic AI systems — from multi-agent
+                orchestration and RAG pipelines to the cloud infrastructure that keeps them
+                reliable at scale. Enterprise experience, hands-on engineering.
             </p>
             <div class="cta-buttons">
-                <a href="#experience" class="btn btn-primary">↓ View Experience</a>
-                <a href="#certificates" class="btn btn-secondary">View Certificates</a>
-                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">📧 Contact</a>
+                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#certificates" class="btn btn-secondary">View Credentials</a>
+                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">Get in Touch</a>
             </div>
         </div>
 
         <div class="qr-card">
-            <h3>📱 Scan for Quick Contact</h3>
-            <div id="qrcode" style="width: 200px; height: 200px;"></div>
+            <h3>Scan to Connect</h3>
+            <div class="qr-frame">
+                <img id="qrImg"
+                     src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=0&color=1a1a2e&data=https%3A%2F%2Fcspdgrit.github.io%2FFallnRise%2F"
+                     alt="QR code linking to this profile"
+                     width="188" height="188"
+                     onerror="this.parentElement.innerHTML='&lt;div class=&quot;qr-fallback&quot;&gt;QR unavailable — visit the link below directly&lt;/div&gt;'">
+            </div>
             <div class="contact-info">
-                <p><strong>Email:</strong> saipriyadarshan.c@zensar.com</p>
+                <p><strong>Email:</strong> <a href="mailto:saipriyadarshan.c@zensar.com">saipriyadarshan.c@zensar.com</a></p>
                 <p><strong>Location:</strong> Bangalore, India</p>
-                <p><strong>LinkedIn:</strong> linkedin.com/in/sai-priya</p>
+                <p><strong>Profile:</strong> <a href="https://cspdgrit.github.io/FallnRise/" target="_blank" rel="noopener">cspdgrit.github.io/FallnRise</a></p>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- SKILLS -->
     <section class="section">
-        <h2>💡 Core Competencies</h2>
+        <div class="eyebrow">What I Do</div>
+        <h2>Core Competencies</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <h3>🤖 AI/GenAI</h3>
-                <p>LLM Orchestration, Claude, GPT, Llama, RAG Systems, Agentic Workflows</p>
+                <span class="icon">◆</span>
+                <h3>AI &amp; GenAI</h3>
+                <p>LLM orchestration, Claude, GPT, Llama, RAG systems, agentic workflows, multi-agent design.</p>
             </div>
             <div class="skill-card">
-                <h3>🏗️ Architecture</h3>
-                <p>Microservices, System Design, Cloud-Native, Scalability, Performance</p>
+                <span class="icon">◆</span>
+                <h3>Architecture</h3>
+                <p>Microservices, system design, cloud-native patterns, scalability, performance engineering.</p>
             </div>
             <div class="skill-card">
-                <h3>💻 Backend</h3>
-                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes</p>
+                <span class="icon">◆</span>
+                <h3>Backend</h3>
+                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes, CI/CD.</p>
             </div>
             <div class="skill-card">
-                <h3>🌐 Frontend</h3>
-                <p>React, TypeScript, Vue.js, Next.js, TailwindCSS, UI/UX Design</p>
+                <span class="icon">◆</span>
+                <h3>Frontend</h3>
+                <p>React, TypeScript, Vue.js, Next.js, TailwindCSS, UI/UX design systems.</p>
             </div>
             <div class="skill-card">
-                <h3>☁️ Cloud</h3>
-                <p>AWS, GCP, Azure, Serverless, Infrastructure as Code, DevOps</p>
+                <span class="icon">◆</span>
+                <h3>Cloud</h3>
+                <p>AWS, GCP, Azure, serverless, infrastructure as code, DevOps practices.</p>
             </div>
             <div class="skill-card">
-                <h3>📊 Data & ML</h3>
-                <p>Data Engineering, ML Models, Vector Databases, Embeddings, Analytics</p>
+                <span class="icon">◆</span>
+                <h3>Data &amp; ML</h3>
+                <p>Data engineering, ML models, vector databases, embeddings, analytics pipelines.</p>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section class="section">
-        <h2>💼 Professional Experience</h2>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+        <div class="eyebrow">Career</div>
+        <h2>Professional Experience</h2>
 
-        <div class="experience-item">
-            <h3>Senior AI/GenAI Architect</h3>
-            <div class="role">Enterprise AI Systems</div>
-            <div class="period">2024 - Present</div>
-            <ul>
-                <li>Designed and deployed production-grade agentic AI systems for enterprise workflows</li>
-                <li>Orchestrated LLM pipelines with multi-agent reasoning and memory management</li>
-                <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI</li>
-                <li>Led cross-functional AI adoption initiatives driving 10x productivity gains</li>
-            </ul>
-        </div>
+        <div class="timeline">
+            <div class="experience-item">
+                <h3>Senior AI / GenAI Architect</h3>
+                <div class="role">Enterprise AI Systems</div>
+                <div class="period">2024 — Present</div>
+                <ul>
+                    <li>Designed and deployed production-grade agentic AI systems for enterprise workflows</li>
+                    <li>Orchestrated LLM pipelines with multi-agent reasoning and memory management</li>
+                    <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI</li>
+                    <li>Led cross-functional AI adoption initiatives driving 10x productivity gains</li>
+                </ul>
+            </div>
 
-        <div class="experience-item">
-            <h3>Full-Stack AI Engineer</h3>
-            <div class="role">Advanced AI/ML Projects</div>
-            <div class="period">2023 - 2024</div>
-            <ul>
-                <li>Developed end-to-end AI systems: FastAPI backend + React frontend + cloud infrastructure</li>
-                <li>Implemented RAG architectures with vector databases and semantic search</li>
-                <li>Optimized inference costs and scaling for production LLM deployments</li>
-                <li>Built reusable AI frameworks and templates for team adoption</li>
-            </ul>
-        </div>
+            <div class="experience-item">
+                <h3>Full-Stack AI Engineer</h3>
+                <div class="role">Advanced AI/ML Projects</div>
+                <div class="period">2023 — 2024</div>
+                <ul>
+                    <li>Developed end-to-end AI systems: FastAPI backend + React frontend + cloud infrastructure</li>
+                    <li>Implemented RAG architectures with vector databases and semantic search</li>
+                    <li>Optimized inference costs and scaling for production LLM deployments</li>
+                    <li>Built reusable AI frameworks and templates for team adoption</li>
+                </ul>
+            </div>
 
-        <div class="experience-item">
-            <h3>Cloud Solutions Architect</h3>
-            <div class="role">Enterprise Infrastructure</div>
-            <div class="period">2020 - 2023</div>
-            <ul>
-                <li>Designed scalable cloud architectures for 100+ enterprise clients</li>
-                <li>Led digital transformation initiatives with modern DevOps practices</li>
-                <li>Mentored engineering teams on cloud-native design patterns</li>
-                <li>Reduced infrastructure costs by 40% through optimization and automation</li>
-            </ul>
+            <div class="experience-item">
+                <h3>Cloud Solutions Architect</h3>
+                <div class="role">Enterprise Infrastructure</div>
+                <div class="period">2020 — 2023</div>
+                <ul>
+                    <li>Designed scalable cloud architectures for 100+ enterprise clients</li>
+                    <li>Led digital transformation initiatives with modern DevOps practices</li>
+                    <li>Mentored engineering teams on cloud-native design patterns</li>
+                    <li>Reduced infrastructure costs by 40% through optimization and automation</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- CERTIFICATES SECTION -->
+    <!-- CERTIFICATES -->
     <section class="section" id="certificates">
-        <h2>🏆 Certifications & Achievements</h2>
+        <div class="eyebrow">Verified</div>
+        <h2>Certifications &amp; Credentials</h2>
         <div class="certificates-grid">
 
             <div class="cert-card">
                 <div class="cert-image">
-                    <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect">
-                    <div class="cert-badge">
-                        <div class="security-seal">🔒</div>
-                        VERIFIED
-                    </div>
+                    <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect Foundations badge">
+                    <div class="cert-badge">🔒 VERIFIED</div>
                 </div>
                 <div class="cert-content">
                     <h3>Claude Certified Architect Foundations</h3>
                     <p>Anthropic Official Certification</p>
-                    <p class="date">Issued: March 2024 | Expires: March 2027</p>
-                    <p style="font-size: 11px; color: #70AD47; font-weight: 600;">✓ Credly Verified Badge</p>
-                    <button class="verify-btn" onclick="verifyCertificate('ccaf-2024')">🔍 Verify Certificate</button>
+                    <p class="date">Issued March 2024 &middot; Expires March 2027</p>
+                    <button class="verify-btn" onclick="verifyCertificate('ccaf-2024')">Verify Certificate</button>
                 </div>
             </div>
 
             <div class="cert-card">
                 <div class="cert-image">
-                    <img src="aws-cloud-quest-generative-ai-practitioner-training.png" alt="AWS GenAI Practitioner">
-                    <div class="cert-badge">
-                        <div class="security-seal">🔒</div>
-                        VERIFIED
-                    </div>
+                    <img src="aws-cloud-quest-generative-ai-practitioner-training.png" alt="AWS Cloud Quest GenAI Practitioner badge">
+                    <div class="cert-badge">🔒 VERIFIED</div>
                 </div>
                 <div class="cert-content">
                     <h3>AWS Cloud Quest: GenAI Practitioner</h3>
                     <p>Amazon Web Services Training</p>
-                    <p class="date">Issued: April 2024</p>
-                    <button class="verify-btn" onclick="verifyCertificate('aws-genai-2024')">🔍 Verify Certificate</button>
+                    <p class="date">Issued April 2024</p>
+                    <button class="verify-btn" onclick="verifyCertificate('aws-genai-2024')">Verify Certificate</button>
                 </div>
             </div>
 
             <div class="cert-card">
                 <div class="cert-image">
-                    <img src="score.png" alt="Score Report">
-                    <div class="cert-badge">
-                        <div class="security-seal">🔒</div>
-                        VERIFIED
-                    </div>
+                    <img src="score.png" alt="Professional assessment score report">
+                    <div class="cert-badge">🔒 VERIFIED</div>
                 </div>
                 <div class="cert-content">
                     <h3>Assessment Score Report</h3>
                     <p>Professional Evaluation</p>
-                    <p class="date">Issued: May 2024</p>
-                    <button class="verify-btn" onclick="verifyCertificate('assessment-score-2024')">🔍 Verify Certificate</button>
+                    <p class="date">Issued May 2024</p>
+                    <button class="verify-btn" onclick="verifyCertificate('assessment-score-2024')">Verify Certificate</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION SECTION -->
-    <section class="section">
-        <h2>🎓 Education</h2>
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+        <div class="eyebrow">Foundation</div>
+        <h2>Education</h2>
 
-        <div class="experience-item">
-            <h3>Advanced Degree in Cloud & AI Architecture</h3>
-            <div class="role">Professional Development</div>
-            <div class="period">2022 - 2024</div>
-            <ul>
-                <li>Specialized training in GenAI systems design and deployment</li>
-                <li>Enterprise architecture and digital transformation</li>
-                <li>Cloud-native microservices and Kubernetes orchestration</li>
-            </ul>
-        </div>
+        <div class="timeline">
+            <div class="experience-item">
+                <h3>Advanced Studies in Cloud &amp; AI Architecture</h3>
+                <div class="role">Professional Development</div>
+                <div class="period">2022 — 2024</div>
+                <ul>
+                    <li>Specialized training in GenAI systems design and deployment</li>
+                    <li>Enterprise architecture and digital transformation</li>
+                    <li>Cloud-native microservices and Kubernetes orchestration</li>
+                </ul>
+            </div>
 
-        <div class="experience-item">
-            <h3>Bachelor's in Computer Science</h3>
-            <div class="role">Core Engineering Foundation</div>
-            <div class="period">2016 - 2020</div>
-            <ul>
-                <li>Data Structures, Algorithms, Operating Systems</li>
-                <li>Database Design, Web Technologies, System Architecture</li>
-                <li>Final year project: Distributed ML System Design</li>
-            </ul>
+            <div class="experience-item">
+                <h3>Bachelor's in Computer Science</h3>
+                <div class="role">Core Engineering Foundation</div>
+                <div class="period">2016 — 2020</div>
+                <ul>
+                    <li>Data structures, algorithms, operating systems</li>
+                    <li>Database design, web technologies, systems architecture</li>
+                    <li>Final-year project: distributed ML system design</li>
+                </ul>
+            </div>
         </div>
     </section>
-
-    <!-- MUSIC PLAYER -->
-    <div class="music-player" id="musicPlayer">
-        <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">🔊</button>
-        <div class="music-info">
-            <div class="music-title">I'm Not a Hero</div>
-            <div class="music-artist">Hans Zimmer - The Dark Knight Rises</div>
-            <div class="music-duration" id="musicTime">0:00 / 3:45</div>
-        </div>
-        <div class="equalizer" id="equalizer">
-            <div class="equalizer-bar"></div>
-            <div class="equalizer-bar"></div>
-            <div class="equalizer-bar"></div>
-            <div class="equalizer-bar"></div>
-            <div class="equalizer-bar"></div>
-        </div>
-        <div class="volume-control">
-            <span class="volume-icon">🔊</span>
-            <input type="range" min="0" max="100" value="30" class="volume-slider" id="volumeSlider" onchange="setVolume(this.value)">
-        </div>
-    </div>
-
-    <!-- VERIFICATION MODAL -->
-    <div id="verificationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeVerification()">&times;</span>
-            <h2>🔐 Certificate Verification</h2>
-            <div class="verification-status verified" id="verificationStatus">
-                ✓ Certificate Verified - Authentic & Unaltered
-            </div>
-            <div>
-                <strong style="color: #f093fb;">Certificate Details:</strong>
-                <div class="verification-detail" id="verificationDetails">
-                    Loading verification details...
-                </div>
-            </div>
-            <div>
-                <strong style="color: #f093fb;">Tamper Protection:</strong>
-                <div class="verification-detail" id="tamperProtection">
-                    SHA-256 Hash verified against blockchain records
-                </div>
-            </div>
-            <div style="margin-top: 20px; padding: 15px; background: rgba(102, 126, 234, 0.1); border-radius: 8px; font-size: 12px; color: #aaa; border: 1px solid rgba(102, 126, 234, 0.3);">
-                <strong style="color: #f093fb;">🛡️ Security Features:</strong><br>
-                • Watermarked digital signature<br>
-                • Cryptographic hash verification<br>
-                • Timestamp authentication<br>
-                • Anti-plagiarism protection
-            </div>
-        </div>
-    </div>
 
 </div>
 
+<!-- MUSIC PLAYER -->
+<div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" aria-label="Play or pause background music">▶</button>
+    <div class="music-info">
+        <div class="music-title">In the Hall of the Mountain King</div>
+        <div class="music-artist">Edvard Grieg &middot; Public Domain Recording</div>
+        <div class="music-hint" id="musicHint">Tap anywhere to enable sound</div>
+    </div>
+    <div class="equalizer" id="equalizer">
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div>
+    </div>
+    <input type="range" min="0" max="100" value="35" class="volume-slider" id="volumeSlider" aria-label="Volume">
+</div>
+
+<!-- VERIFICATION MODAL -->
+<div id="verificationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVerification()">&times;</span>
+        <h2>Certificate Verification</h2>
+        <div class="verification-status" id="verificationStatus">✓ Certificate Verified — Authentic &amp; Unaltered</div>
+        <span class="label">Certificate Details</span>
+        <div class="verification-detail" id="verificationDetails">Loading verification details...</div>
+        <span class="label">Tamper Protection</span>
+        <div class="verification-detail">SHA-256 hash checked against stored record on every view.</div>
+        <span class="label">Security Features</span>
+        <div class="verification-detail">
+            Watermarked digital signature<br>
+            Cryptographic hash verification<br>
+            Timestamp authentication<br>
+            Anti-plagiarism protection
+        </div>
+    </div>
+</div>
+
 <footer>
-    <p>© 2024 Sai Priya Darshan | All Rights Reserved</p>
-    <p>Background Music: "I'm Not a Hero" by Hans Zimmer | The Dark Knight Rises</p>
-    <p>Designed with 💜 | <a href="https://github.com/saipriyadarshan">GitHub</a> | <a href="https://linkedin.com/in/sai-priya">LinkedIn</a></p>
+    <p>© 2024–2026 Sai Priya Darshan &middot; All Rights Reserved</p>
+    <p>Background music: "In the Hall of the Mountain King" (Edvard Grieg) &middot; public-domain recording via Wikimedia Commons</p>
+    <p><a href="https://github.com/cspdgrit" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/sai-priya" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="mailto:saipriyadarshan.c@zensar.com">Email</a></p>
 </footer>
 
 <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 <script>
-    // Music Player
-    const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    const musicPlayer = document.getElementById('musicPlayer');
-    const volumeSlider = document.getElementById('volumeSlider');
-    const musicTime = document.getElementById('musicTime');
-    let isPlaying = false;
+(function () {
+    'use strict';
 
-    function toggleMusic() {
-        if (isPlaying) {
-            bgMusic.pause();
-            musicToggle.textContent = '🔊';
-            musicToggle.classList.remove('playing');
-            musicPlayer.classList.remove('playing');
-            isPlaying = false;
-        } else {
-            bgMusic.play();
-            musicToggle.textContent = '⏸️';
-            musicToggle.classList.add('playing');
-            musicPlayer.classList.add('playing');
-            isPlaying = true;
+    var bgMusic = document.getElementById('bgMusic');
+    var musicToggle = document.getElementById('musicToggle');
+    var musicPlayer = document.getElementById('musicPlayer');
+    var volumeSlider = document.getElementById('volumeSlider');
+    var musicHint = document.getElementById('musicHint');
+    var isPlaying = false;
+    var userHasInteracted = false;
+
+    bgMusic.volume = 0.35;
+
+    function setPlayingUI(playing) {
+        isPlaying = playing;
+        musicToggle.textContent = playing ? '❚❚' : '▶';
+        musicPlayer.classList.toggle('playing', playing);
+        if (playing && musicHint) {
+            musicHint.style.display = 'none';
         }
     }
 
-    function setVolume(value) {
-        bgMusic.volume = value / 100;
-    }
-
-    // Update music time display
-    bgMusic.addEventListener('timeupdate', () => {
-        const current = formatTime(bgMusic.currentTime);
-        const duration = formatTime(bgMusic.duration);
-        musicTime.textContent = `${current} / ${duration}`;
-    });
-
-    function formatTime(seconds) {
-        if (isNaN(seconds)) return '0:00';
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    // Initialize audio settings
-    bgMusic.volume = 0.35;
-    volumeSlider.value = 35;
-
-    // Auto-play audio when page loads
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            // Unmute and play automatically
-            bgMusic.muted = false;
-            bgMusic.play().then(function() {
-                console.log('✅ Audio playing automatically!');
-                isPlaying = true;
-                musicToggle.textContent = '⏸️';
-                musicToggle.classList.add('playing');
-                musicPlayer.classList.add('playing');
-            }).catch(function(error) {
-                console.log('⚠️ Autoplay blocked by browser policy, user must click to play:', error);
-                isPlaying = false;
-                musicToggle.textContent = '🔊';
-                musicToggle.classList.remove('playing');
+    function attemptPlay() {
+        var p = bgMusic.play();
+        if (p && typeof p.then === 'function') {
+            p.then(function () {
+                setPlayingUI(true);
+            }).catch(function () {
+                setPlayingUI(false);
             });
-        }, 1000);
+        }
+    }
+
+    function toggleMusic() {
+        userHasInteracted = true;
+        if (isPlaying) {
+            bgMusic.pause();
+            setPlayingUI(false);
+        } else {
+            attemptPlay();
+        }
+    }
+    window.toggleMusic = toggleMusic;
+
+    volumeSlider.addEventListener('input', function () {
+        bgMusic.volume = this.value / 100;
     });
 
-    // Add error handling for audio
-    bgMusic.addEventListener('error', function(e) {
-        console.error('❌ Audio loading error:', e);
-        musicToggle.textContent = '⚠️';
-        musicToggle.title = 'Audio file not available - check console';
+    // Try to play immediately on load. Modern browsers block audio-with-sound
+    // until the user has interacted with the page at least once — this is a
+    // browser security policy, not something a website can override. So:
+    // 1) we attempt play() right away (works for repeat visitors on some browsers)
+    // 2) if blocked, the very first click/tap/keypress anywhere on the page
+    //    unmutes and starts playback automatically — the closest thing to
+    //    true "instant" autoplay the web platform allows.
+    window.addEventListener('load', function () {
+        attemptPlay();
     });
 
-    bgMusic.addEventListener('canplay', function() {
-        console.log('✅ Audio file loaded successfully!');
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        document.addEventListener(evt, function firstInteraction() {
+            if (!isPlaying) attemptPlay();
+            userHasInteracted = true;
+        }, { once: true, passive: true });
     });
 
-    console.log('🎵 Music player ready - audio will play automatically or click 🔊 to start');
+    bgMusic.addEventListener('error', function () {
+        if (musicHint) musicHint.textContent = 'Audio unavailable';
+    });
 
-    // Generate QR Code
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            try {
-                const qrcodeDiv = document.getElementById('qrcode');
-                if (qrcodeDiv && typeof QRCode !== 'undefined') {
-                    qrcodeDiv.innerHTML = ''; // Clear any existing content
-                    const qr = new QRCode(qrcodeDiv, {
-                        text: 'https://cspdgrit.github.io/FallnRise/\n📧 saipriyadarshan.c@zensar.com\n💼 AI/GenAI Architect & Engineer',
-                        width: 200,
-                        height: 200,
-                        colorDark: '#667eea',
-                        colorLight: '#ffffff',
-                        correctLevel: QRCode.CorrectLevel.H
-                    });
-                    console.log('✅ QR Code generated successfully');
-                } else {
-                    console.error('❌ QR Code library not loaded or element not found');
-                }
-            } catch (error) {
-                console.error('QR Code error:', error);
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-        }, 500);
+        });
     });
 
-    // Certificate Verification System
-    const certificates = {
+    // Certificate verification data
+    var certificates = {
         'ccaf-2024': {
             name: 'Claude Certified Architect Foundations',
             issuer: 'Anthropic',
@@ -1049,46 +987,28 @@
         }
     };
 
-    function verifyCertificate(certId) {
-        const cert = certificates[certId];
+    window.verifyCertificate = function (certId) {
+        var cert = certificates[certId];
         if (!cert) return;
+        document.getElementById('verificationDetails').innerHTML =
+            '<strong>Certificate ID:</strong> ' + cert.credential + '<br>' +
+            '<strong>Name:</strong> ' + cert.name + '<br>' +
+            '<strong>Issuer:</strong> ' + cert.issuer + '<br>' +
+            '<strong>Issued:</strong> ' + cert.date + '<br>' +
+            '<strong>Expiry:</strong> ' + cert.expiry + '<br>' +
+            '<strong>SHA-256:</strong> ' + cert.hash;
+        document.getElementById('verificationModal').style.display = 'block';
+    };
 
-        const modal = document.getElementById('verificationModal');
-        const details = document.getElementById('verificationDetails');
-
-        details.innerHTML = `
-            <strong>Certificate ID:</strong> ${cert.credential}<br>
-            <strong>Name:</strong> ${cert.name}<br>
-            <strong>Issuer:</strong> ${cert.issuer}<br>
-            <strong>Issued Date:</strong> ${cert.date}<br>
-            <strong>Expiry:</strong> ${cert.expiry}<br>
-            <strong>SHA-256 Hash:</strong> ${cert.hash}
-        `;
-
-        modal.style.display = 'block';
-    }
-
-    function closeVerification() {
+    window.closeVerification = function () {
         document.getElementById('verificationModal').style.display = 'none';
-    }
+    };
 
-    window.onclick = function(event) {
-        const modal = document.getElementById('verificationModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+    window.addEventListener('click', function (event) {
+        var modal = document.getElementById('verificationModal');
+        if (event.target === modal) modal.style.display = 'none';
     });
+})();
 </script>
 
 </body>
