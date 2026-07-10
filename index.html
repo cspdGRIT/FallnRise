@@ -289,6 +289,18 @@
     .volume-slider::-moz-range-thumb { width: 11px; height: 11px; border: none; border-radius: 50%; background: var(--gold-bright); cursor: pointer; }
     @media (max-width: 640px) { .music-info, .volume-slider { display: none; } .music-player { padding: 8px; } }
 
+    .music-fallback-link {
+        display: none;
+        font-size: 11px; font-weight: 700; color: var(--gold-bright);
+        text-decoration: none; white-space: nowrap; border: 1px solid var(--line);
+        padding: 6px 10px; border-radius: 999px; transition: all 0.2s ease;
+    }
+    .music-fallback-link:hover { background: rgba(201,162,75,0.12); }
+    .music-player.blocked .equalizer,
+    .music-player.blocked .volume-slider,
+    .music-player.blocked .music-toggle { display: none; }
+    .music-player.blocked .music-fallback-link { display: inline-block; }
+
     /* CHAT / RAG WIDGET */
     .chat-widget { position: fixed; bottom: 24px; left: 24px; z-index: 999; }
     .chat-toggle {
@@ -358,14 +370,14 @@
 </head>
 <body>
 
-<!-- Background audio: self-hosted, cross-browser MP3 (not a third-party iframe).
-     Cross-origin embeds (YouTube/SoundCloud) get silently killed by ad-blockers
-     and corporate firewalls, and the previous Ogg fallback didn't play in Safari
-     at all — this MP3 source works everywhere with zero external dependency. -->
-<audio id="bgMusic" loop preload="auto">
-    <source src="hall-of-the-mountain-king.mp3" type="audio/mpeg">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/8/84/Hall_of_the_Mountain_King_%28ISRC_USUAN1200072%29.mp3" type="audio/mpeg">
-</audio>
+<!-- Hidden YouTube player — streams the real Hans Zimmer / Dark Knight Rises
+     theme via YouTube's own official player (not rehosted — this is the only
+     legal way to play the actual copyrighted track for free). If it can't
+     load (blocked embed, ad-blocker, offline), the player UI switches to a
+     visible "open on YouTube" link instead of silently substituting music. -->
+<div style="position:fixed; width:1px; height:1px; opacity:0; bottom:0; right:0; pointer-events:none; overflow:hidden;">
+    <div id="yt-player"></div>
+</div>
 
 <div class="top-strip">
     <div class="top-strip-inner">
@@ -703,16 +715,17 @@
 
 <!-- MUSIC PLAYER -->
 <div class="music-player" id="musicPlayer">
-    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" aria-label="Play or pause background music">▶</button>
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" aria-label="Play or pause theme music">▶</button>
     <div class="music-info">
-        <div class="music-title" id="musicTitle">In the Hall of the Mountain King</div>
-        <div class="music-artist" id="musicArtist">Grieg, arr. Kevin MacLeod &middot; CC BY 3.0</div>
-        <div class="music-hint" id="musicHint">Tap anywhere to enable sound</div>
+        <div class="music-title" id="musicTitle">I'm Not a Hero</div>
+        <div class="music-artist" id="musicArtist">Hans Zimmer &middot; The Dark Knight Rises</div>
+        <div class="music-hint" id="musicHint">Loading…</div>
     </div>
     <div class="equalizer" id="equalizer">
         <div class="equalizer-bar"></div><div class="equalizer-bar"></div><div class="equalizer-bar"></div>
     </div>
     <input type="range" min="0" max="100" value="35" class="volume-slider" id="volumeSlider" aria-label="Volume">
+    <a href="https://www.youtube.com/watch?v=A37a1cnBrZA" target="_blank" rel="noopener" class="music-fallback-link" id="musicFallbackLink">Open on YouTube ↗</a>
 </div>
 
 <!-- RAG-LITE PROFILE Q&A -->
@@ -737,7 +750,7 @@
 
 <footer>
     <p>© 2024–2026 Saipriyadarshan Cindula &middot; All Rights Reserved</p>
-    <p>Theme music: "In the Hall of the Mountain King" (Edvard Grieg), arranged by Kevin MacLeod (incompetech.com), licensed under CC BY 3.0 — self-hosted for reliable playback.</p>
+    <p>Theme music: "I'm Not a Hero" (Hans Zimmer, The Dark Knight Rises) — streamed via YouTube embed. If it doesn't load, the player links directly to the video instead of substituting a different track.</p>
     <p><a href="https://github.com/cspdgrit" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/saipriya-cindula" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="mailto:priyadarshan.iitk@gmail.com">Email</a></p>
 </footer>
 
@@ -748,25 +761,27 @@
     'use strict';
 
     /* ===================== AUDIO CONTROLLER =====================
-       Self-hosted MP3, same-origin — deliberately NOT a third-party
-       iframe (YouTube/SoundCloud). Cross-origin embeds get silently
-       killed by ad-blockers and corporate firewalls, and an Ogg-only
-       fallback doesn't play in Safari at all. A same-origin MP3 has
-       none of those failure modes: no ad-blocker target, no firewall
-       risk (same domain the page itself loaded from), universal codec
-       support. "Hall of the Mountain King" (Kevin MacLeod arrangement
-       of Grieg, CC BY 3.0 — incompetech.com), a dramatic escalating
-       orchestral piece in the same spirit as the Dark Knight theme.
+       The real track only — "I'm Not a Hero" (Hans Zimmer, The Dark
+       Knight Rises), streamed via YouTube's own official player. This
+       is the only legal way to play the actual copyrighted recording
+       for free (streaming through the rights holder's own embed, not
+       rehosting a copy). If the embed can't load — blocked by an
+       ad-blocker, a corporate firewall, or simply offline — we do NOT
+       silently substitute a different track. Instead the player
+       switches to a visible "Open on YouTube" link so it's always
+       obvious what's happening, never silently broken.
     ================================================================ */
 
-    var bgMusic = document.getElementById('bgMusic');
+    var YT_VIDEO_ID = 'A37a1cnBrZA';
     var musicToggle = document.getElementById('musicToggle');
     var musicPlayer = document.getElementById('musicPlayer');
     var volumeSlider = document.getElementById('volumeSlider');
     var musicHint = document.getElementById('musicHint');
-    var isPlaying = false;
 
-    bgMusic.volume = 0.35;
+    var ytPlayer = null;
+    var ytReady = false;
+    var blocked = false;
+    var isPlaying = false;
 
     function setPlayingUI(playing) {
         isPlaying = playing;
@@ -775,27 +790,71 @@
         if (playing && musicHint) musicHint.style.display = 'none';
     }
 
+    function markBlocked() {
+        if (blocked) return;
+        blocked = true;
+        musicPlayer.classList.add('blocked');
+        if (musicHint) musicHint.textContent = 'Embed unavailable';
+    }
+
     function attemptPlay() {
-        var p = bgMusic.play();
-        if (p && typeof p.then === 'function') {
-            p.then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
+        if (blocked || !ytReady || !ytPlayer) return;
+        try {
+            ytPlayer.unMute();
+            ytPlayer.playVideo();
+            setPlayingUI(true);
+        } catch (e) {
+            markBlocked();
         }
     }
     window.attemptPlay = attemptPlay;
 
     function pauseAudio() {
-        bgMusic.pause();
+        if (ytReady && ytPlayer) { try { ytPlayer.pauseVideo(); } catch (e) {} }
         setPlayingUI(false);
     }
 
     function toggleMusic() {
+        if (blocked) return;
         if (isPlaying) pauseAudio(); else attemptPlay();
     }
     window.toggleMusic = toggleMusic;
 
     volumeSlider.addEventListener('input', function () {
-        bgMusic.volume = this.value / 100;
+        if (ytReady && ytPlayer) { try { ytPlayer.setVolume(this.value); } catch (e) {} }
     });
+
+    window.onYouTubeIframeAPIReady = function () {
+        try {
+            ytPlayer = new YT.Player('yt-player', {
+                videoId: YT_VIDEO_ID,
+                playerVars: {
+                    autoplay: 1, mute: 1, loop: 1, playlist: YT_VIDEO_ID,
+                    controls: 0, disablekb: 1, fs: 0, modestbranding: 1, playsinline: 1
+                },
+                events: {
+                    onReady: function (e) {
+                        ytReady = true;
+                        if (musicHint) musicHint.textContent = 'Tap anywhere to enable sound';
+                        try { e.target.setVolume(35); } catch (err) {}
+                        attemptPlay();
+                    },
+                    onError: function () { markBlocked(); }
+                }
+            });
+        } catch (e) {
+            markBlocked();
+        }
+    };
+    var ytTag = document.createElement('script');
+    ytTag.onerror = markBlocked;
+    ytTag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(ytTag);
+
+    // If the YouTube API script itself is blocked (network/ad-blocker), the
+    // callback above never fires — detect that and show the honest fallback
+    // link rather than staying silently stuck on "Loading…".
+    setTimeout(function () { if (!ytReady) markBlocked(); }, 6000);
 
     window.addEventListener('load', function () { attemptPlay(); });
 
@@ -803,10 +862,6 @@
         document.addEventListener(evt, function onFirstInteraction() {
             if (!isPlaying) attemptPlay();
         }, { once: true, passive: true });
-    });
-
-    bgMusic.addEventListener('error', function () {
-        if (musicHint) musicHint.textContent = 'Audio unavailable';
     });
 
     // Smooth scroll for in-page links
