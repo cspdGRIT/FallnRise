@@ -22,14 +22,14 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #6a4c93 100%);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #333;
+            animation: darkGradientShift 20s ease infinite;
+            color: #fff;
             overflow-x: hidden;
         }
 
-        @keyframes gradientShift {
+        @keyframes darkGradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -43,16 +43,17 @@
 
         /* HERO SECTION */
         .hero {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 15, 30, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 60px 40px;
             margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .hero-content h1 {
@@ -63,18 +64,20 @@
             background-clip: text;
             margin-bottom: 15px;
             font-weight: 800;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
         }
 
         .hero-content .title {
             font-size: 24px;
-            color: #764ba2;
+            color: #f093fb;
             font-weight: 600;
             margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(240, 147, 251, 0.3);
         }
 
         .hero-content .bio {
             font-size: 16px;
-            color: #555;
+            color: #ccc;
             line-height: 1.8;
             margin-bottom: 30px;
         }
@@ -100,38 +103,40 @@
         .btn-primary {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
         }
 
         .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+            background: rgba(240, 147, 251, 0.1);
+            color: #f093fb;
+            border: 2px solid #f093fb;
         }
 
         .btn-secondary:hover {
-            background: #667eea;
+            background: #f093fb;
             color: white;
         }
 
         /* QR CARD */
         .qr-card {
-            background: white;
+            background: rgba(15, 15, 30, 0.9);
             border-radius: 15px;
             padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .qr-card h3 {
             margin-bottom: 20px;
-            color: #667eea;
+            color: #f093fb;
             font-size: 18px;
         }
 
@@ -139,7 +144,7 @@
             padding: 15px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .contact-info {
@@ -151,26 +156,27 @@
         .contact-info p {
             margin: 8px 0;
             font-size: 13px;
-            color: #666;
+            color: #aaa;
         }
 
         .contact-info strong {
-            color: #667eea;
+            color: #f093fb;
         }
 
         /* SECTION */
         .section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 15, 30, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 50px 40px;
             margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .section h2 {
             font-size: 36px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -178,6 +184,7 @@
             font-weight: 700;
             border-bottom: 3px solid #f093fb;
             padding-bottom: 15px;
+            text-shadow: 0 0 20px rgba(240, 147, 251, 0.2);
         }
 
         /* SKILLS */
@@ -188,10 +195,10 @@
         }
 
         .skill-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(240, 147, 251, 0.15));
             padding: 25px;
             border-radius: 15px;
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -199,18 +206,18 @@
         .skill-card:hover {
             transform: translateY(-5px);
             border-color: #667eea;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
         .skill-card h3 {
-            color: #667eea;
+            color: #f093fb;
             font-size: 16px;
             margin-bottom: 12px;
         }
 
         .skill-card p {
             font-size: 13px;
-            color: #666;
+            color: #bbb;
             line-height: 1.6;
         }
 
@@ -222,17 +229,18 @@
         }
 
         .cert-card {
-            background: white;
+            background: rgba(15, 15, 30, 0.9);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
             position: relative;
+            border: 1px solid rgba(102, 126, 234, 0.2);
         }
 
         .cert-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
 
         .cert-image {
@@ -286,20 +294,20 @@
         }
 
         .cert-content h3 {
-            color: #667eea;
+            color: #f093fb;
             font-size: 16px;
             margin-bottom: 8px;
         }
 
         .cert-content p {
             font-size: 13px;
-            color: #666;
+            color: #bbb;
             margin-bottom: 10px;
         }
 
         .cert-content .date {
             font-size: 11px;
-            color: #999;
+            color: #888;
         }
 
         .verify-btn {
@@ -317,7 +325,7 @@
         }
 
         .verify-btn:hover {
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
             transform: scale(1.02);
         }
 
@@ -325,7 +333,7 @@
         .experience-item {
             padding: 25px;
             border-left: 4px solid #667eea;
-            background: rgba(102, 126, 234, 0.05);
+            background: rgba(102, 126, 234, 0.08);
             border-radius: 10px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
@@ -333,23 +341,23 @@
 
         .experience-item:hover {
             border-left-color: #f093fb;
-            background: rgba(240, 147, 251, 0.05);
+            background: rgba(240, 147, 251, 0.08);
         }
 
         .experience-item h3 {
-            color: #667eea;
+            color: #f093fb;
             font-size: 18px;
             margin-bottom: 5px;
         }
 
         .experience-item .role {
-            color: #764ba2;
+            color: #667eea;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
         .experience-item .period {
-            color: #999;
+            color: #888;
             font-size: 13px;
             margin-bottom: 12px;
         }
@@ -357,7 +365,7 @@
         .experience-item ul {
             margin-left: 20px;
             font-size: 14px;
-            color: #666;
+            color: #bbb;
         }
 
         .experience-item li {
@@ -365,11 +373,164 @@
             line-height: 1.6;
         }
 
+        /* MUSIC PLAYER */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(102, 126, 234, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 999;
+            animation: slideUp 0.5s ease;
+            border: 1px solid rgba(240, 147, 251, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .music-toggle {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .music-toggle.playing {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .music-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            color: white;
+            font-size: 12px;
+            min-width: 150px;
+        }
+
+        .music-title {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .music-artist {
+            opacity: 0.8;
+            font-size: 11px;
+        }
+
+        .music-duration {
+            opacity: 0.7;
+            font-size: 10px;
+            margin-top: 2px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+            padding-left: 10px;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .volume-slider {
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .volume-icon {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .equalizer {
+            display: flex;
+            gap: 2px;
+            align-items: flex-end;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        .equalizer-bar {
+            width: 2px;
+            background: white;
+            border-radius: 1px;
+        }
+
+        .music-player.playing .equalizer-bar {
+            animation: barHeightAnimation 0.6s ease-in-out infinite;
+        }
+
+        .equalizer-bar:nth-child(1) { animation-delay: 0s; }
+        .equalizer-bar:nth-child(2) { animation-delay: 0.1s; }
+        .equalizer-bar:nth-child(3) { animation-delay: 0.2s; }
+        .equalizer-bar:nth-child(4) { animation-delay: 0.3s; }
+        .equalizer-bar:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes barHeightAnimation {
+            0%, 100% { height: 4px; }
+            50% { height: 16px; }
+        }
+
         /* FOOTER */
         footer {
             text-align: center;
             padding: 40px;
-            color: white;
+            color: #ccc;
             font-size: 14px;
         }
 
@@ -377,6 +538,77 @@
             color: #f093fb;
             text-decoration: none;
             font-weight: 600;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #1a1a2e;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #888;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        .modal h2 {
+            color: #f093fb;
+            margin-bottom: 20px;
+        }
+
+        .verification-detail {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            word-break: break-all;
+            color: #aaa;
+        }
+
+        .verification-status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .verified {
+            background: rgba(112, 173, 71, 0.2);
+            color: #70AD47;
         }
 
         /* RESPONSIVE */
@@ -406,101 +638,52 @@
                 width: 100%;
                 text-align: center;
             }
-        }
 
-        /* MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-        }
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 15px;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
 
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 30px;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-        }
+            .music-info {
+                display: none;
+            }
 
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+            .volume-control {
+                display: none;
+            }
 
-        .close {
-            color: #999;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover {
-            color: #667eea;
-        }
-
-        .modal h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-
-        .verification-detail {
-            background: #f5f5f7;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            word-break: break-all;
-            color: #666;
-        }
-
-        .verification-status {
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-weight: 600;
-        }
-
-        .verified {
-            background: #E2EFD9;
-            color: #70AD47;
-        }
-
-        .unverified {
-            background: #FCE4D6;
-            color: #C55A11;
+            .music-player {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
+
+<!-- BACKGROUND AUDIO -->
+<audio id="bgMusic" loop crossorigin="anonymous">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 
 <div class="container">
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>Sai Priya Darshan</h1>
-            <div class="title">AI/GenAI Architect & Full-Stack Engineer</div>
+            <div class="title">🦾 AI/GenAI Architect & Full-Stack Engineer</div>
             <p class="bio">
-                Passionate about building scalable AI-driven systems, LLM orchestration, and agentic workflows.
-                With deep expertise in cloud architecture, enterprise AI implementation, and hands-on software engineering,
-                I transform complex problems into elegant, production-ready solutions.
+                Transforming complex problems into elegant AI-driven solutions.
+                Expertise in LLM orchestration, agentic systems, and enterprise-scale architecture.
+                Building the future, one algorithm at a time.
             </p>
             <div class="cta-buttons">
-                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#experience" class="btn btn-primary">↓ View Experience</a>
                 <a href="#certificates" class="btn btn-secondary">View Certificates</a>
-                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">Contact</a>
+                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">📧 Contact</a>
             </div>
         </div>
 
@@ -521,15 +704,15 @@
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>🤖 AI/GenAI</h3>
-                <p>LLM Orchestration, Claude, GPT, Llama, RAG Systems, Agentic Workflows, Multi-Agent Design</p>
+                <p>LLM Orchestration, Claude, GPT, Llama, RAG Systems, Agentic Workflows</p>
             </div>
             <div class="skill-card">
                 <h3>🏗️ Architecture</h3>
-                <p>Microservices, System Design, Cloud-Native, Scalability, Performance Optimization</p>
+                <p>Microservices, System Design, Cloud-Native, Scalability, Performance</p>
             </div>
             <div class="skill-card">
                 <h3>💻 Backend</h3>
-                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes, CI/CD</p>
+                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes</p>
             </div>
             <div class="skill-card">
                 <h3>🌐 Frontend</h3>
@@ -557,7 +740,7 @@
             <ul>
                 <li>Designed and deployed production-grade agentic AI systems for enterprise workflows</li>
                 <li>Orchestrated LLM pipelines with multi-agent reasoning and memory management</li>
-                <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI practices</li>
+                <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI</li>
                 <li>Led cross-functional AI adoption initiatives driving 10x productivity gains</li>
             </ul>
         </div>
@@ -593,10 +776,8 @@
         <div class="certificates-grid">
 
             <div class="cert-card">
-                <div class="cert-image" style="overflow: auto; display: flex; align-items: center; justify-content: center; padding: 0;">
-                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06d6c1a7-fd58-4b50-9c79-faa1d59070e9" data-share-badge-host="https://www.credly.com"></div>
-                    </div>
+                <div class="cert-image">
+                    <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect">
                     <div class="cert-badge">
                         <div class="security-seal">🔒</div>
                         VERIFIED
@@ -622,7 +803,7 @@
                 <div class="cert-content">
                     <h3>AWS Cloud Quest: GenAI Practitioner</h3>
                     <p>Amazon Web Services Training</p>
-                    <p class="date">Issued: 2024</p>
+                    <p class="date">Issued: April 2024</p>
                     <button class="verify-btn" onclick="verifyCertificate('aws-genai-2024')">🔍 Verify Certificate</button>
                 </div>
             </div>
@@ -638,7 +819,7 @@
                 <div class="cert-content">
                     <h3>Assessment Score Report</h3>
                     <p>Professional Evaluation</p>
-                    <p class="date">Issued: 2024</p>
+                    <p class="date">Issued: May 2024</p>
                     <button class="verify-btn" onclick="verifyCertificate('assessment-score-2024')">🔍 Verify Certificate</button>
                 </div>
             </div>
@@ -672,6 +853,27 @@
         </div>
     </section>
 
+    <!-- MUSIC PLAYER -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">🔊</button>
+        <div class="music-info">
+            <div class="music-title">I'm Not a Hero</div>
+            <div class="music-artist">Hans Zimmer - The Dark Knight Rises</div>
+            <div class="music-duration" id="musicTime">0:00 / 3:45</div>
+        </div>
+        <div class="equalizer" id="equalizer">
+            <div class="equalizer-bar"></div>
+            <div class="equalizer-bar"></div>
+            <div class="equalizer-bar"></div>
+            <div class="equalizer-bar"></div>
+            <div class="equalizer-bar"></div>
+        </div>
+        <div class="volume-control">
+            <span class="volume-icon">🔊</span>
+            <input type="range" min="0" max="100" value="30" class="volume-slider" id="volumeSlider" onchange="setVolume(this.value)">
+        </div>
+    </div>
+
     <!-- VERIFICATION MODAL -->
     <div id="verificationModal" class="modal">
         <div class="modal-content">
@@ -681,19 +883,19 @@
                 ✓ Certificate Verified - Authentic & Unaltered
             </div>
             <div>
-                <strong>Certificate Details:</strong>
+                <strong style="color: #f093fb;">Certificate Details:</strong>
                 <div class="verification-detail" id="verificationDetails">
                     Loading verification details...
                 </div>
             </div>
             <div>
-                <strong>Tamper Protection:</strong>
+                <strong style="color: #f093fb;">Tamper Protection:</strong>
                 <div class="verification-detail" id="tamperProtection">
                     SHA-256 Hash verified against blockchain records
                 </div>
             </div>
-            <div style="margin-top: 20px; padding: 15px; background: #f5f5f7; border-radius: 8px; font-size: 12px; color: #666;">
-                <strong>🛡️ Security Features:</strong><br>
+            <div style="margin-top: 20px; padding: 15px; background: rgba(102, 126, 234, 0.1); border-radius: 8px; font-size: 12px; color: #aaa; border: 1px solid rgba(102, 126, 234, 0.3);">
+                <strong style="color: #f093fb;">🛡️ Security Features:</strong><br>
                 • Watermarked digital signature<br>
                 • Cryptographic hash verification<br>
                 • Timestamp authentication<br>
@@ -706,16 +908,63 @@
 
 <footer>
     <p>© 2024 Sai Priya Darshan | All Rights Reserved</p>
+    <p>Background Music: "I'm Not a Hero" by Hans Zimmer | The Dark Knight Rises</p>
     <p>Designed with 💜 | <a href="https://github.com/saipriyadarshan">GitHub</a> | <a href="https://linkedin.com/in/sai-priya">LinkedIn</a></p>
 </footer>
 
 <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 <script>
+    // Music Player
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    const musicPlayer = document.getElementById('musicPlayer');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const musicTime = document.getElementById('musicTime');
+    let isPlaying = false;
+
+    function toggleMusic() {
+        if (isPlaying) {
+            bgMusic.pause();
+            musicToggle.textContent = '🔊';
+            musicToggle.classList.remove('playing');
+            musicPlayer.classList.remove('playing');
+            isPlaying = false;
+        } else {
+            bgMusic.play();
+            musicToggle.textContent = '⏸️';
+            musicToggle.classList.add('playing');
+            musicPlayer.classList.add('playing');
+            isPlaying = true;
+        }
+    }
+
+    function setVolume(value) {
+        bgMusic.volume = value / 100;
+    }
+
+    // Update music time display
+    bgMusic.addEventListener('timeupdate', () => {
+        const current = formatTime(bgMusic.currentTime);
+        const duration = formatTime(bgMusic.duration);
+        musicTime.textContent = `${current} / ${duration}`;
+    });
+
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return '0:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    // Auto-mute initially (browser autoplay policy)
+    bgMusic.volume = 0.3;
+    volumeSlider.value = 30;
+
     // Generate QR Code
     window.addEventListener('load', function() {
         const qr = new QRCode(document.getElementById('qrcode'), {
-            text: 'https://saipriyadarshan.com\n📧 saipriyadarshan.c@zensar.com\n📱 +91 XXXXXXXXXX\n💼 AI/GenAI Architect',
+            text: 'https://saipriyadarshan.com\n📧 saipriyadarshan.c@zensar.com\n💼 AI/GenAI Architect',
             width: 200,
             height: 200,
             colorDark: '#667eea',
