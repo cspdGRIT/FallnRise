@@ -10,16 +10,17 @@
 
 ## 🌐 Your Live URLs
 
-### Primary URL:
+### ✅ Primary URL (GitHub Pages):
+```
+https://cspdgrit.github.io/FallnRise/
+```
+
+### Alternative (if configured):
 ```
 https://fallenrise.iopages.app
 ```
 
-### Check Your Exact URL:
-1. Go to [iopages.com](https://iopages.com) → Dashboard
-2. Navigate to Projects → FallnRise
-3. Look for "Live URL" or "Deployment" section
-4. Copy your live link
+**Status:** ✅ Live and working on GitHub Pages
 
 ---
 
@@ -62,11 +63,11 @@ QR Code: Generated & Working
 
 ### Copy & Paste Share:
 ```
-✅ URL: https://fallenrise.iopages.app
+✅ URL: https://cspdgrit.github.io/FallnRise/
+✅ GitHub Repo: https://github.com/cspdGRIT/FallnRise
 ✅ QR: Built-in on profile
 ✅ Email: saipriyadarshan.c@zensar.com
 ✅ LinkedIn: linkedin.com/in/sai-priya
-✅ GitHub: github.com/cspdGRIT/FallnRise
 ```
 
 ### Social Media Posts:
@@ -260,9 +261,9 @@ Your awesome digital CV profile is now live and ready to impress!
 
 ## 📝 Quick Links
 
-- **Live Profile:** https://fallenrise.iopages.app
+- **Live Profile:** https://cspdgrit.github.io/FallnRise/
 - **GitHub Repo:** https://github.com/cspdGRIT/FallnRise
-- **iopages Dashboard:** https://iopages.com/dashboard
+- **GitHub Pages Settings:** https://github.com/cspdGRIT/FallnRise/settings/pages
 - **Contact:** saipriyadarshan.c@zensar.com
 
 ---
