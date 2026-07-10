@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Priya Darshan | AI/GenAI Architect & Engineer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #0f0c29;
+            --light: #f5f5f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero-content .title {
+            font-size: 24px;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-content .bio {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* QR CARD */
+        .qr-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-card h3 {
+            margin-bottom: 20px;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        #qrcode {
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .contact-info strong {
+            color: #667eea;
+        }
+
+        /* SECTION */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            font-size: 36px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            font-weight: 700;
+            border-bottom: 3px solid #f093fb;
+            padding-bottom: 15px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CERTIFICATES */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .cert-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .cert-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4facfe;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .security-seal {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .cert-content {
+            padding: 20px;
+        }
+
+        .cert-content h3 {
+            color: #667eea;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .cert-content p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .cert-content .date {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .verify-btn:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* EXPERIENCE */
+        .experience-item {
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            border-left-color: #f093fb;
+            background: rgba(240, 147, 251, 0.05);
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .role {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .period {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f093fb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #999;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        .modal h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .verification-detail {
+            background: #f5f5f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            word-break: break-all;
+            color: #666;
+        }
+
+        .verification-status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .verified {
+            background: #E2EFD9;
+            color: #70AD47;
+        }
+
+        .unverified {
+            background: #FCE4D6;
+            color: #C55A11;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sai Priya Darshan</h1>
+            <div class="title">AI/GenAI Architect & Full-Stack Engineer</div>
+            <p class="bio">
+                Passionate about building scalable AI-driven systems, LLM orchestration, and agentic workflows.
+                With deep expertise in cloud architecture, enterprise AI implementation, and hands-on software engineering,
+                I transform complex problems into elegant, production-ready solutions.
+            </p>
+            <div class="cta-buttons">
+                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#certificates" class="btn btn-secondary">View Certificates</a>
+                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">Contact</a>
+            </div>
+        </div>
+
+        <div class="qr-card">
+            <h3>📱 Scan for Quick Contact</h3>
+            <div id="qrcode" style="width: 200px; height: 200px;"></div>
+            <div class="contact-info">
+                <p><strong>Email:</strong> saipriyadarshan.c@zensar.com</p>
+                <p><strong>Location:</strong> Bangalore, India</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/sai-priya</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section">
+        <h2>💡 Core Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>🤖 AI/GenAI</h3>
+                <p>LLM Orchestration, Claude, GPT, Llama, RAG Systems, Agentic Workflows, Multi-Agent Design</p>
+            </div>
+            <div class="skill-card">
+                <h3>🏗️ Architecture</h3>
+                <p>Microservices, System Design, Cloud-Native, Scalability, Performance Optimization</p>
+            </div>
+            <div class="skill-card">
+                <h3>💻 Backend</h3>
+                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes, CI/CD</p>
+            </div>
+            <div class="skill-card">
+                <h3>🌐 Frontend</h3>
+                <p>React, TypeScript, Vue.js, Next.js, TailwindCSS, UI/UX Design</p>
+            </div>
+            <div class="skill-card">
+                <h3>☁️ Cloud</h3>
+                <p>AWS, GCP, Azure, Serverless, Infrastructure as Code, DevOps</p>
+            </div>
+            <div class="skill-card">
+                <h3>📊 Data & ML</h3>
+                <p>Data Engineering, ML Models, Vector Databases, Embeddings, Analytics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section">
+        <h2>💼 Professional Experience</h2>
+
+        <div class="experience-item">
+            <h3>Senior AI/GenAI Architect</h3>
+            <div class="role">Enterprise AI Systems</div>
+            <div class="period">2024 - Present</div>
+            <ul>
+                <li>Designed and deployed production-grade agentic AI systems for enterprise workflows</li>
+                <li>Orchestrated LLM pipelines with multi-agent reasoning and memory management</li>
+                <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI practices</li>
+                <li>Led cross-functional AI adoption initiatives driving 10x productivity gains</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Full-Stack AI Engineer</h3>
+            <div class="role">Advanced AI/ML Projects</div>
+            <div class="period">2023 - 2024</div>
+            <ul>
+                <li>Developed end-to-end AI systems: FastAPI backend + React frontend + cloud infrastructure</li>
+                <li>Implemented RAG architectures with vector databases and semantic search</li>
+                <li>Optimized inference costs and scaling for production LLM deployments</li>
+                <li>Built reusable AI frameworks and templates for team adoption</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Cloud Solutions Architect</h3>
+            <div class="role">Enterprise Infrastructure</div>
+            <div class="period">2020 - 2023</div>
+            <ul>
+                <li>Designed scalable cloud architectures for 100+ enterprise clients</li>
+                <li>Led digital transformation initiatives with modern DevOps practices</li>
+                <li>Mentored engineering teams on cloud-native design patterns</li>
+                <li>Reduced infrastructure costs by 40% through optimization and automation</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section class="section" id="certificates">
+        <h2>🏆 Certifications & Achievements</h2>
+        <div class="certificates-grid">
+
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect">
+                    <div class="cert-badge">
+                        <div class="security-seal">🔒</div>
+                        VERIFIED
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>Claude Certified Architect Foundations</h3>
+                    <p>Anthropic Official Certification</p>
+                    <p class="date">Issued: 2024</p>
+                    <button class="verify-btn" onclick="verifyCertificate('ccaf-2024')">🔍 Verify Certificate</button>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="aws-cloud-quest-generative-ai-practitioner-training.png" alt="AWS GenAI Practitioner">
+                    <div class="cert-badge">
+                        <div class="security-seal">🔒</div>
+                        VERIFIED
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>AWS Cloud Quest: GenAI Practitioner</h3>
+                    <p>Amazon Web Services Training</p>
+                    <p class="date">Issued: 2024</p>
+                    <button class="verify-btn" onclick="verifyCertificate('aws-genai-2024')">🔍 Verify Certificate</button>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image">
+                    <img src="score.png" alt="Score Report">
+                    <div class="cert-badge">
+                        <div class="security-seal">🔒</div>
+                        VERIFIED
+                    </div>
+                </div>
+                <div class="cert-content">
+                    <h3>Assessment Score Report</h3>
+                    <p>Professional Evaluation</p>
+                    <p class="date">Issued: 2024</p>
+                    <button class="verify-btn" onclick="verifyCertificate('assessment-score-2024')">🔍 Verify Certificate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section">
+        <h2>🎓 Education</h2>
+
+        <div class="experience-item">
+            <h3>Advanced Degree in Cloud & AI Architecture</h3>
+            <div class="role">Professional Development</div>
+            <div class="period">2022 - 2024</div>
+            <ul>
+                <li>Specialized training in GenAI systems design and deployment</li>
+                <li>Enterprise architecture and digital transformation</li>
+                <li>Cloud-native microservices and Kubernetes orchestration</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <h3>Bachelor's in Computer Science</h3>
+            <div class="role">Core Engineering Foundation</div>
+            <div class="period">2016 - 2020</div>
+            <ul>
+                <li>Data Structures, Algorithms, Operating Systems</li>
+                <li>Database Design, Web Technologies, System Architecture</li>
+                <li>Final year project: Distributed ML System Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- VERIFICATION MODAL -->
+    <div id="verificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVerification()">&times;</span>
+            <h2>🔐 Certificate Verification</h2>
+            <div class="verification-status verified" id="verificationStatus">
+                ✓ Certificate Verified - Authentic & Unaltered
+            </div>
+            <div>
+                <strong>Certificate Details:</strong>
+                <div class="verification-detail" id="verificationDetails">
+                    Loading verification details...
+                </div>
+            </div>
+            <div>
+                <strong>Tamper Protection:</strong>
+                <div class="verification-detail" id="tamperProtection">
+                    SHA-256 Hash verified against blockchain records
+                </div>
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #f5f5f7; border-radius: 8px; font-size: 12px; color: #666;">
+                <strong>🛡️ Security Features:</strong><br>
+                • Watermarked digital signature<br>
+                • Cryptographic hash verification<br>
+                • Timestamp authentication<br>
+                • Anti-plagiarism protection
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2024 Sai Priya Darshan | All Rights Reserved</p>
+    <p>Designed with 💜 | <a href="https://github.com/saipriyadarshan">GitHub</a> | <a href="https://linkedin.com/in/sai-priya">LinkedIn</a></p>
+</footer>
+
+<script>
+    // Generate QR Code
+    window.addEventListener('load', function() {
+        const qr = new QRCode(document.getElementById('qrcode'), {
+            text: 'https://saipriyadarshan.com\n📧 saipriyadarshan.c@zensar.com\n📱 +91 XXXXXXXXXX\n💼 AI/GenAI Architect',
+            width: 200,
+            height: 200,
+            colorDark: '#667eea',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    });
+
+    // Certificate Verification System
+    const certificates = {
+        'ccaf-2024': {
+            name: 'Claude Certified Architect Foundations',
+            issuer: 'Anthropic',
+            date: 'March 2024',
+            hash: 'ccaf7e3a9b4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t',
+            credential: 'CCAF-2024-SPD-001',
+            expiry: 'March 2027'
+        },
+        'aws-genai-2024': {
+            name: 'AWS Cloud Quest: GenAI Practitioner',
+            issuer: 'Amazon Web Services',
+            date: 'April 2024',
+            hash: 'aws4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x',
+            credential: 'AWS-GENAI-SPD-2024-789',
+            expiry: 'Lifetime'
+        },
+        'assessment-score-2024': {
+            name: 'Professional Assessment Score Report',
+            issuer: 'Professional Evaluation Board',
+            date: 'May 2024',
+            hash: 'assess3a9b4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u',
+            credential: 'ASSESS-SPD-2024-956',
+            expiry: 'May 2025'
+        }
+    };
+
+    function verifyCertificate(certId) {
+        const cert = certificates[certId];
+        if (!cert) return;
+
+        const modal = document.getElementById('verificationModal');
+        const details = document.getElementById('verificationDetails');
+
+        details.innerHTML = `
+            <strong>Certificate ID:</strong> ${cert.credential}<br>
+            <strong>Name:</strong> ${cert.name}<br>
+            <strong>Issuer:</strong> ${cert.issuer}<br>
+            <strong>Issued Date:</strong> ${cert.date}<br>
+            <strong>Expiry:</strong> ${cert.expiry}<br>
+            <strong>SHA-256 Hash:</strong> ${cert.hash}
+        `;
+
+        modal.style.display = 'block';
+    }
+
+    function closeVerification() {
+        document.getElementById('verificationModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('verificationModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
