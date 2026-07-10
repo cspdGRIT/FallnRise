@@ -358,18 +358,14 @@
 </head>
 <body>
 
-<!-- Fallback background audio: public-domain orchestral recording, always available if the SoundCloud embed can't load -->
+<!-- Background audio: self-hosted, cross-browser MP3 (not a third-party iframe).
+     Cross-origin embeds (YouTube/SoundCloud) get silently killed by ad-blockers
+     and corporate firewalls, and the previous Ogg fallback didn't play in Safari
+     at all — this MP3 source works everywhere with zero external dependency. -->
 <audio id="bgMusic" loop preload="auto">
-    <source src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg" type="audio/ogg">
+    <source src="hall-of-the-mountain-king.mp3" type="audio/mpeg">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/8/84/Hall_of_the_Mountain_King_%28ISRC_USUAN1200072%29.mp3" type="audio/mpeg">
 </audio>
-
-<!-- Hidden SoundCloud player — streams "The Dark Knight Rises Theme" via SoundCloud's own embed (not rehosted) -->
-<iframe id="sc-player"
-        style="position:fixed; width:1px; height:1px; opacity:0; bottom:0; right:0; pointer-events:none; overflow:hidden; border:0;"
-        scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F334455115&auto_play=false&show_artwork=false&visual=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&single_active=false">
-</iframe>
-<script src="https://w.soundcloud.com/player/api.js"></script>
 
 <div class="top-strip">
     <div class="top-strip-inner">
@@ -709,8 +705,8 @@
 <div class="music-player" id="musicPlayer">
     <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" aria-label="Play or pause background music">▶</button>
     <div class="music-info">
-        <div class="music-title" id="musicTitle">The Dark Knight Rises Theme</div>
-        <div class="music-artist" id="musicArtist">Valtteri Korjonen &middot; via SoundCloud</div>
+        <div class="music-title" id="musicTitle">In the Hall of the Mountain King</div>
+        <div class="music-artist" id="musicArtist">Grieg, arr. Kevin MacLeod &middot; CC BY 3.0</div>
         <div class="music-hint" id="musicHint">Tap anywhere to enable sound</div>
     </div>
     <div class="equalizer" id="equalizer">
@@ -741,7 +737,7 @@
 
 <footer>
     <p>© 2024–2026 Saipriyadarshan Cindula &middot; All Rights Reserved</p>
-    <p>Theme music: "The Dark Knight Rises Theme" (Valtteri Korjonen) via SoundCloud embed — falls back to a public-domain recording if unavailable.</p>
+    <p>Theme music: "In the Hall of the Mountain King" (Edvard Grieg), arranged by Kevin MacLeod (incompetech.com), licensed under CC BY 3.0 — self-hosted for reliable playback.</p>
     <p><a href="https://github.com/cspdgrit" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/saipriya-cindula" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="mailto:priyadarshan.iitk@gmail.com">Email</a></p>
 </footer>
 
@@ -752,12 +748,15 @@
     'use strict';
 
     /* ===================== AUDIO CONTROLLER =====================
-       Primary: "The Dark Knight Rises Theme" (Valtteri Korjonen),
-       streamed via SoundCloud's own official widget — not rehosted,
-       so this respects the uploader's embed/streaming permissions.
-       Fallback: a public-domain orchestral recording (Grieg) hosted
-       on Wikimedia Commons, used automatically if SoundCloud can't
-       load (blocked domain, ad-blocker, track removed, etc).
+       Self-hosted MP3, same-origin — deliberately NOT a third-party
+       iframe (YouTube/SoundCloud). Cross-origin embeds get silently
+       killed by ad-blockers and corporate firewalls, and an Ogg-only
+       fallback doesn't play in Safari at all. A same-origin MP3 has
+       none of those failure modes: no ad-blocker target, no firewall
+       risk (same domain the page itself loaded from), universal codec
+       support. "Hall of the Mountain King" (Kevin MacLeod arrangement
+       of Grieg, CC BY 3.0 — incompetech.com), a dramatic escalating
+       orchestral piece in the same spirit as the Dark Knight theme.
     ================================================================ */
 
     var bgMusic = document.getElementById('bgMusic');
@@ -765,12 +764,6 @@
     var musicPlayer = document.getElementById('musicPlayer');
     var volumeSlider = document.getElementById('volumeSlider');
     var musicHint = document.getElementById('musicHint');
-    var musicTitleEl = document.getElementById('musicTitle');
-    var musicArtistEl = document.getElementById('musicArtist');
-
-    var scWidget = null;
-    var scReady = false;
-    var useSoundCloud = true;
     var isPlaying = false;
 
     bgMusic.volume = 0.35;
@@ -782,23 +775,7 @@
         if (playing && musicHint) musicHint.style.display = 'none';
     }
 
-    function switchToFallback() {
-        if (!useSoundCloud) return;
-        useSoundCloud = false;
-        musicTitleEl.textContent = 'In the Hall of the Mountain King';
-        musicArtistEl.textContent = 'Edvard Grieg · Public Domain Recording';
-    }
-
     function attemptPlay() {
-        if (useSoundCloud && scReady && scWidget) {
-            try {
-                scWidget.play();
-                setPlayingUI(true);
-                return;
-            } catch (e) {
-                switchToFallback();
-            }
-        }
         var p = bgMusic.play();
         if (p && typeof p.then === 'function') {
             p.then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
@@ -807,11 +784,7 @@
     window.attemptPlay = attemptPlay;
 
     function pauseAudio() {
-        if (useSoundCloud && scReady && scWidget) {
-            try { scWidget.pause(); } catch (e) {}
-        } else {
-            bgMusic.pause();
-        }
+        bgMusic.pause();
         setPlayingUI(false);
     }
 
@@ -821,35 +794,8 @@
     window.toggleMusic = toggleMusic;
 
     volumeSlider.addEventListener('input', function () {
-        var v = this.value;
-        if (useSoundCloud && scReady && scWidget) { try { scWidget.setVolume(v); } catch (e) {} }
-        bgMusic.volume = v / 100;
+        bgMusic.volume = this.value / 100;
     });
-
-    // Initialize the SoundCloud Widget API against our hidden iframe
-    (function initSoundCloud() {
-        var iframe = document.getElementById('sc-player');
-        if (!iframe || typeof SC === 'undefined') { switchToFallback(); return; }
-        try {
-            scWidget = SC.Widget(iframe);
-            scWidget.bind(SC.Widget.Events.READY, function () {
-                scReady = true;
-                try { scWidget.setVolume(35); } catch (e) {}
-                attemptPlay();
-            });
-            scWidget.bind(SC.Widget.Events.ERROR, function () { switchToFallback(); attemptPlay(); });
-            // SoundCloud widget has no native loop flag — restart on finish
-            scWidget.bind(SC.Widget.Events.FINISH, function () {
-                try { scWidget.seekTo(0); scWidget.play(); } catch (e) {}
-            });
-        } catch (e) {
-            switchToFallback();
-        }
-    })();
-
-    // If SoundCloud hasn't initialized within 4s (blocked domain, corporate
-    // proxy, ad-blocker), fall back automatically so audio still plays.
-    setTimeout(function () { if (!scReady) switchToFallback(); }, 4000);
 
     window.addEventListener('load', function () { attemptPlay(); });
 
