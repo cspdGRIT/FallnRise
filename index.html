@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sai Priya Darshan | AI &amp; GenAI Architect</title>
-<meta name="description" content="Sai Priya Darshan — AI/GenAI Architect &amp; Full-Stack Engineer. Digital CV, verified credentials, and contact card.">
+<title>Saipriyadarshan Cindula | GenAI Architect</title>
+<meta name="description" content="Saipriyadarshan Cindula — GenAI Architect &amp; ML Engineering Manager. 15+ years in software, 7+ years shipping production LLM/agentic systems for BFSI, SaaS, and EdTech.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -38,7 +37,6 @@
         line-height: 1.6;
     }
 
-    /* Ambient background — subtle, cinematic, professional (not neon/rainbow) */
     body::before {
         content: '';
         position: fixed;
@@ -70,7 +68,6 @@
 
     .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-    /* Top hairline nav strip */
     .top-strip {
         border-bottom: 1px solid var(--line-soft);
         background: rgba(5, 7, 13, 0.72);
@@ -87,41 +84,17 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 16px;
     }
 
-    .brand {
-        font-family: 'Playfair Display', serif;
-        font-weight: 800;
-        font-size: 18px;
-        letter-spacing: 0.02em;
-        color: var(--text);
-    }
-
+    .brand { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 17px; letter-spacing: 0.01em; color: var(--text); white-space: nowrap; }
     .brand span { color: var(--gold); }
 
-    .top-nav {
-        display: flex;
-        gap: 28px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-    }
-
-    .top-nav a {
-        color: var(--text-dim);
-        text-decoration: none;
-        transition: color 0.25s ease;
-        position: relative;
-    }
-
+    .top-nav { display: flex; gap: 24px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .top-nav a { color: var(--text-dim); text-decoration: none; transition: color 0.25s ease; }
     .top-nav a:hover { color: var(--gold-bright); }
+    @media (max-width: 760px) { .top-nav { display: none; } }
 
-    @media (max-width: 640px) {
-        .top-nav { display: none; }
-    }
-
-    /* Eyebrow label used above section titles */
     .eyebrow {
         display: inline-flex;
         align-items: center;
@@ -133,92 +106,61 @@
         color: var(--gold);
         margin-bottom: 14px;
     }
-
-    .eyebrow::before {
-        content: '';
-        width: 26px;
-        height: 1px;
-        background: var(--gold);
-        display: inline-block;
-    }
+    .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--gold); display: inline-block; }
 
     /* HERO */
-    .hero {
-        padding: 96px 0 64px;
-        display: grid;
-        grid-template-columns: 1.25fr 0.85fr;
-        gap: 56px;
-        align-items: center;
-    }
+    .hero { padding: 88px 0 40px; display: grid; grid-template-columns: 1.25fr 0.85fr; gap: 56px; align-items: center; }
 
     .hero-content h1 {
         font-family: 'Playfair Display', serif;
         font-weight: 800;
-        font-size: 56px;
-        line-height: 1.08;
+        font-size: 50px;
+        line-height: 1.1;
         letter-spacing: -0.01em;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
         color: var(--text);
     }
 
     .hero-content h1 em {
         font-style: normal;
         background: linear-gradient(120deg, var(--gold-bright), var(--gold) 60%, var(--violet));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .hero-content .title {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text-dim);
-        margin-bottom: 24px;
-        letter-spacing: 0.01em;
-    }
-
+    .hero-content .title { font-size: 17px; font-weight: 600; color: var(--text-dim); margin-bottom: 22px; }
     .hero-content .title strong { color: var(--gold-bright); font-weight: 700; }
-
-    .hero-content .bio {
-        font-size: 16px;
-        color: var(--text-dim);
-        line-height: 1.85;
-        margin-bottom: 34px;
-        max-width: 52ch;
-    }
+    .hero-content .bio { font-size: 15.5px; color: var(--text-dim); line-height: 1.85; margin-bottom: 28px; max-width: 56ch; }
 
     .cta-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .btn {
-        padding: 13px 28px;
-        border-radius: 10px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        border: 1px solid transparent;
+        padding: 13px 26px; border-radius: 10px; font-size: 13px; font-weight: 700;
+        letter-spacing: 0.03em; cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+        display: inline-flex; align-items: center; gap: 8px; border: 1px solid transparent;
     }
-
-    .btn-primary {
-        background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-        color: #1a1406;
-        box-shadow: 0 8px 24px rgba(201, 162, 75, 0.25);
-    }
-
+    .btn-primary { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: #1a1406; box-shadow: 0 8px 24px rgba(201, 162, 75, 0.25); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201, 162, 75, 0.38); }
-
-    .btn-secondary {
-        background: transparent;
-        color: var(--text);
-        border-color: var(--line-soft);
-    }
-
+    .btn-secondary { background: transparent; color: var(--text); border-color: var(--line-soft); }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold-bright); }
+
+    /* HIGHLIGHTS STRIP */
+    .highlights {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 32px;
+    }
+    .highlight-chip {
+        background: var(--panel);
+        border: 1px solid var(--line-soft);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 12px;
+        color: var(--text-dim);
+        line-height: 1.45;
+    }
+    .highlight-chip strong { display: block; color: var(--gold-bright); font-size: 13.5px; font-weight: 700; margin-bottom: 2px; }
+    @media (max-width: 760px) { .highlights { grid-template-columns: repeat(2, 1fr); } }
 
     /* QR CARD */
     .qr-card {
@@ -226,288 +168,115 @@
         border: 1px solid var(--line);
         border-radius: var(--radius);
         padding: 28px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: flex; flex-direction: column; align-items: center;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
     }
-
-    .qr-card h3 {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 18px;
-    }
-
-    .qr-frame {
-        background: #fff;
-        padding: 14px;
-        border-radius: 12px;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-        width: 188px;
-        height: 188px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
+    .qr-card h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .qr-frame { background: #fff; padding: 14px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35); width: 188px; height: 188px; display: flex; align-items: center; justify-content: center; }
     .qr-frame img { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
-
-    .qr-fallback {
-        font-size: 11px;
-        color: #666;
-        text-align: center;
-        padding: 8px;
-    }
-
+    .qr-fallback { font-size: 11px; color: #666; text-align: center; padding: 8px; }
     .contact-info { margin-top: 22px; text-align: center; width: 100%; }
-
-    .contact-info p {
-        margin: 7px 0;
-        font-size: 13px;
-        color: var(--text-dim);
-    }
-
+    .contact-info p { margin: 7px 0; font-size: 13px; color: var(--text-dim); }
     .contact-info strong { color: var(--text); font-weight: 600; }
-
     .contact-info a { color: var(--gold-bright); text-decoration: none; }
     .contact-info a:hover { text-decoration: underline; }
 
     /* SECTION */
-    .section { padding: 56px 0; border-top: 1px solid var(--line-soft); }
+    .section { padding: 52px 0; border-top: 1px solid var(--line-soft); }
+    .section h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 800; margin-bottom: 32px; color: var(--text); }
 
-    .section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: 36px;
-        color: var(--text);
+    /* SKILL GROUPS (pills) */
+    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px 28px; }
+    .skill-group h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 7px; }
+    .pill {
+        font-size: 12px; font-weight: 600; color: var(--text-dim);
+        background: var(--panel); border: 1px solid var(--line-soft);
+        padding: 6px 12px; border-radius: 999px; transition: all 0.2s ease;
     }
+    .pill:hover { border-color: var(--gold); color: var(--gold-bright); }
 
-    /* SKILLS */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 18px;
+    /* ACHIEVEMENTS */
+    .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .achievement-card {
+        background: var(--panel); border: 1px solid var(--line-soft); border-radius: 14px;
+        padding: 22px; transition: all 0.3s ease;
     }
+    .achievement-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 32px rgba(0,0,0,0.35); }
+    .achievement-card h3 { font-size: 15px; font-weight: 700; color: var(--gold-bright); margin-bottom: 8px; }
+    .achievement-card p { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
 
-    .skill-card {
-        background: var(--panel);
-        padding: 24px;
-        border-radius: 14px;
-        border: 1px solid var(--line-soft);
-        transition: all 0.3s ease;
-    }
-
-    .skill-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--gold);
-        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
-    }
-
-    .skill-card .icon { font-size: 20px; margin-bottom: 10px; display: block; }
-
-    .skill-card h3 {
-        color: var(--text);
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        letter-spacing: 0.01em;
-    }
-
-    .skill-card p { font-size: 13px; color: var(--text-dim); line-height: 1.65; }
-
-    /* EXPERIENCE */
+    /* EXPERIENCE TIMELINE */
     .timeline { position: relative; padding-left: 28px; }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 6px;
-        bottom: 6px;
-        width: 1px;
-        background: linear-gradient(180deg, var(--gold), var(--line-soft));
-    }
-
-    .experience-item { position: relative; padding-bottom: 36px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(180deg, var(--gold), var(--line-soft)); }
+    .experience-item { position: relative; padding-bottom: 32px; }
     .experience-item:last-child { padding-bottom: 0; }
-
     .experience-item::before {
-        content: '';
-        position: absolute;
-        left: -33px;
-        top: 6px;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: var(--gold-bright);
-        box-shadow: 0 0 0 4px rgba(201, 162, 75, 0.15);
+        content: ''; position: absolute; left: -33px; top: 6px; width: 9px; height: 9px; border-radius: 50%;
+        background: var(--gold-bright); box-shadow: 0 0 0 4px rgba(201, 162, 75, 0.15);
     }
-
-    .experience-item h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-
-    .experience-item .role { color: var(--gold-bright); font-weight: 600; font-size: 13px; margin-bottom: 4px; }
-
-    .experience-item .period {
-        color: var(--text-faint);
-        font-size: 12px;
-        margin-bottom: 14px;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    }
-
-    .experience-item ul { margin-left: 18px; font-size: 14px; color: var(--text-dim); }
-    .experience-item li { margin-bottom: 7px; line-height: 1.65; }
-    .experience-item li::marker { color: var(--gold); }
+    .experience-item h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .experience-item .role { color: var(--gold-bright); font-weight: 600; font-size: 12.5px; margin-bottom: 4px; }
+    .experience-item .period { color: var(--text-faint); font-size: 11.5px; margin-bottom: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .experience-item p.desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.75; }
 
     /* CERTIFICATES */
-    .certificates-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-        gap: 22px;
-    }
-
-    .cert-card {
-        background: var(--panel);
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid var(--line-soft);
-        transition: all 0.3s ease;
-    }
-
+    .certificates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .cert-card { background: var(--panel); border-radius: 14px; overflow: hidden; border: 1px solid var(--line-soft); transition: all 0.3s ease; }
     .cert-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 34px rgba(0,0,0,0.35); }
-
     .cert-image {
-        width: 100%;
-        height: 190px;
-        background: linear-gradient(135deg, #14182c, #1b1f3a);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        border-bottom: 1px solid var(--line-soft);
+        width: 100%; height: 170px; background: linear-gradient(135deg, #14182c, #1b1f3a);
+        display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid var(--line-soft);
     }
-
-    .cert-image img { max-width: 92%; max-height: 92%; object-fit: contain; border-radius: 6px; }
-
-    .cert-badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: rgba(201, 162, 75, 0.16);
-        color: var(--gold-bright);
-        border: 1px solid var(--line);
-        padding: 5px 11px;
-        border-radius: 20px;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        display: flex;
-        align-items: center;
-        gap: 5px;
+    .cert-image img { max-width: 88%; max-height: 88%; object-fit: contain; border-radius: 6px; }
+    .cert-icon {
+        width: 68px; height: 68px; border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold-bright), var(--violet-soft));
+        color: #1a1406; font-weight: 800; font-size: 15px;
+        display: flex; align-items: center; justify-content: center; letter-spacing: -0.02em;
     }
-
-    .cert-content { padding: 20px; }
-    .cert-content h3 { color: var(--text); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .cert-content p { font-size: 12px; color: var(--text-dim); margin-bottom: 6px; }
+    .cert-content { padding: 18px 20px; }
+    .cert-content h3 { color: var(--text); font-size: 14.5px; font-weight: 700; margin-bottom: 6px; }
+    .cert-content p { font-size: 12px; color: var(--text-dim); margin-bottom: 5px; }
     .cert-content .date { font-size: 11px; color: var(--text-faint); }
-
-    .verify-btn {
-        width: 100%;
-        padding: 10px;
-        background: transparent;
-        color: var(--gold-bright);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        cursor: pointer;
-        margin-top: 14px;
-        transition: all 0.25s ease;
+    .cert-real-badge {
+        display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 700;
+        color: #8fd47a; background: rgba(112,173,71,0.12); border: 1px solid rgba(112,173,71,0.3);
+        padding: 4px 10px; border-radius: 20px; margin-top: 10px;
     }
 
-    .verify-btn:hover { background: rgba(201, 162, 75, 0.12); border-color: var(--gold); }
+    /* HONOURS */
+    .honours-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 6px 28px; }
+    .honour-item { padding: 12px 0; border-bottom: 1px solid var(--line-soft); font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+    .honour-item strong { color: var(--text); font-weight: 700; }
 
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 48px 24px 120px;
-        color: var(--text-faint);
-        font-size: 12.5px;
-        border-top: 1px solid var(--line-soft);
-    }
-
+    footer { text-align: center; padding: 44px 24px 130px; color: var(--text-faint); font-size: 12.5px; border-top: 1px solid var(--line-soft); }
     footer p { margin: 6px 0; }
     footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
     footer a:hover { text-decoration: underline; }
 
-    /* MUSIC PLAYER — refined pill */
+    /* MUSIC PLAYER */
     .music-player {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        background: rgba(13, 17, 32, 0.92);
-        backdrop-filter: blur(14px);
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 10px 16px;
+        position: fixed; bottom: 24px; right: 24px;
+        background: rgba(13, 17, 32, 0.92); backdrop-filter: blur(14px);
+        border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        z-index: 999;
-        animation: slideUp 0.6s ease;
-        max-width: 340px;
+        display: flex; align-items: center; gap: 12px; z-index: 999;
+        animation: slideUp 0.6s ease; max-width: 340px;
     }
-
-    @keyframes slideUp {
-        from { transform: translateY(40px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
+    @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     .music-toggle {
-        background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-        border: none;
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 15px;
-        color: #1a1406;
+        background: linear-gradient(135deg, var(--gold-bright), var(--gold)); border: none;
+        width: 38px; height: 38px; min-width: 38px; border-radius: 50%; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; font-size: 14px; color: #1a1406;
         transition: transform 0.2s ease;
     }
-
     .music-toggle:hover { transform: scale(1.08); }
-
-    .music-info {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        color: var(--text);
-        font-size: 11px;
-        min-width: 0;
-    }
-
+    .music-info { display: flex; flex-direction: column; gap: 2px; color: var(--text); font-size: 11px; min-width: 0; }
     .music-title { font-weight: 700; font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
     .music-artist { color: var(--text-faint); font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
-
-    .music-hint {
-        font-size: 10px;
-        color: var(--gold-bright);
-        margin-top: 1px;
-        animation: hintPulse 1.8s ease-in-out infinite;
-    }
-
+    .music-hint { font-size: 10px; color: var(--gold-bright); margin-top: 1px; animation: hintPulse 1.8s ease-in-out infinite; }
     @keyframes hintPulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
-
     .equalizer { display: flex; gap: 2px; align-items: flex-end; height: 16px; }
     .equalizer-bar { width: 2px; background: var(--gold-bright); border-radius: 1px; height: 3px; }
     .music-player.playing .equalizer-bar { animation: barH 0.7s ease-in-out infinite; }
@@ -515,102 +284,73 @@
     .equalizer-bar:nth-child(2) { animation-delay: 0.15s; }
     .equalizer-bar:nth-child(3) { animation-delay: 0.3s; }
     @keyframes barH { 0%, 100% { height: 3px; } 50% { height: 14px; } }
+    .volume-slider { width: 52px; height: 3px; border-radius: 2px; -webkit-appearance: none; appearance: none; background: var(--line-soft); outline: none; cursor: pointer; }
+    .volume-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 11px; height: 11px; border-radius: 50%; background: var(--gold-bright); cursor: pointer; }
+    .volume-slider::-moz-range-thumb { width: 11px; height: 11px; border: none; border-radius: 50%; background: var(--gold-bright); cursor: pointer; }
+    @media (max-width: 640px) { .music-info, .volume-slider { display: none; } .music-player { padding: 8px; } }
 
-    .volume-slider {
-        width: 56px;
-        height: 3px;
-        border-radius: 2px;
-        -webkit-appearance: none;
-        appearance: none;
-        background: var(--line-soft);
-        outline: none;
-        cursor: pointer;
+    /* CHAT / RAG WIDGET */
+    .chat-widget { position: fixed; bottom: 24px; left: 24px; z-index: 999; }
+    .chat-toggle {
+        background: linear-gradient(135deg, var(--violet), var(--violet-soft));
+        color: #fff; border: none; border-radius: 999px; padding: 13px 20px;
+        font-size: 13px; font-weight: 700; letter-spacing: 0.02em; cursor: pointer;
+        display: flex; align-items: center; gap: 8px;
+        box-shadow: 0 12px 30px rgba(108, 99, 255, 0.35);
+        transition: transform 0.2s ease;
     }
+    .chat-toggle:hover { transform: translateY(-2px); }
 
-    .volume-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 11px; height: 11px;
-        border-radius: 50%;
-        background: var(--gold-bright);
-        cursor: pointer;
+    .chat-panel {
+        display: none;
+        position: absolute; bottom: 62px; left: 0;
+        width: min(360px, 88vw); max-height: 480px;
+        background: rgba(13, 17, 32, 0.98); backdrop-filter: blur(16px);
+        border: 1px solid var(--line-soft); border-radius: 16px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+        flex-direction: column; overflow: hidden;
     }
+    .chat-panel.open { display: flex; }
 
-    .volume-slider::-moz-range-thumb {
-        width: 11px; height: 11px; border: none; border-radius: 50%;
-        background: var(--gold-bright); cursor: pointer;
+    .chat-header { padding: 16px 18px; border-bottom: 1px solid var(--line-soft); display: flex; justify-content: space-between; align-items: flex-start; }
+    .chat-title { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 15px; color: var(--text); }
+    .chat-sub { font-size: 10.5px; color: var(--text-faint); margin-top: 3px; max-width: 260px; line-height: 1.4; }
+    .chat-close { cursor: pointer; color: var(--text-faint); font-size: 20px; line-height: 1; }
+    .chat-close:hover { color: var(--gold-bright); }
+
+    .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--line-soft); }
+    .chat-chip {
+        font-size: 11px; color: var(--text-dim); background: var(--panel); border: 1px solid var(--line-soft);
+        padding: 6px 10px; border-radius: 999px; cursor: pointer; transition: all 0.2s ease;
+    }
+    .chat-chip:hover { border-color: var(--violet); color: #cfcdff; }
+
+    .chat-messages { flex: 1; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; min-height: 120px; }
+    .msg { max-width: 88%; padding: 10px 13px; border-radius: 12px; font-size: 12.5px; line-height: 1.6; }
+    .msg.user { align-self: flex-end; background: linear-gradient(135deg, var(--violet), var(--violet-soft)); color: #fff; border-bottom-right-radius: 3px; }
+    .msg.bot { align-self: flex-start; background: var(--panel); border: 1px solid var(--line-soft); color: var(--text-dim); border-bottom-left-radius: 3px; }
+    .msg.bot strong { color: var(--gold-bright); }
+
+    .chat-input-row { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid var(--line-soft); }
+    .chat-input-row input {
+        flex: 1; background: var(--panel); border: 1px solid var(--line-soft); border-radius: 10px;
+        padding: 10px 12px; font-size: 12.5px; color: var(--text); font-family: inherit;
+    }
+    .chat-input-row input:focus { outline: none; border-color: var(--violet); }
+    .chat-input-row button {
+        background: linear-gradient(135deg, var(--violet), var(--violet-soft)); color: #fff; border: none;
+        border-radius: 10px; width: 38px; font-size: 14px; cursor: pointer;
     }
 
     @media (max-width: 640px) {
-        .music-info, .volume-slider { display: none; }
-        .music-player { padding: 8px; }
+        .chat-widget { left: 12px; bottom: 12px; }
+        .chat-toggle span.label { display: none; }
     }
-
-    /* MODAL */
-    .modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 1000;
-        background: rgba(2, 3, 8, 0.75);
-        backdrop-filter: blur(6px);
-    }
-
-    .modal-content {
-        background: var(--panel);
-        margin: 8% auto;
-        padding: 32px;
-        border-radius: var(--radius);
-        width: 90%;
-        max-width: 560px;
-        border: 1px solid var(--line);
-        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
-        animation: slideIn 0.25s ease;
-    }
-
-    @keyframes slideIn { from { transform: translateY(-24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-    .close {
-        color: var(--text-faint);
-        float: right;
-        font-size: 24px;
-        cursor: pointer;
-        line-height: 1;
-        transition: color 0.2s;
-    }
-    .close:hover { color: var(--gold-bright); }
-
-    .modal h2 { font-family: 'Playfair Display', serif; color: var(--text); margin-bottom: 20px; font-size: 24px; }
-
-    .verification-detail {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--line-soft);
-        padding: 14px;
-        border-radius: 8px;
-        margin: 12px 0;
-        font-family: 'SF Mono', 'Courier New', monospace;
-        font-size: 11.5px;
-        word-break: break-all;
-        color: var(--text-dim);
-        line-height: 1.9;
-    }
-
-    .verification-status {
-        padding: 12px 14px;
-        border-radius: 8px;
-        margin-bottom: 16px;
-        font-weight: 700;
-        font-size: 13px;
-        background: rgba(112, 173, 71, 0.14);
-        color: #8fd47a;
-        border: 1px solid rgba(112, 173, 71, 0.3);
-    }
-
-    .label { color: var(--gold-bright); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; display: block; margin-top: 14px; margin-bottom: 4px; }
 
     @media (max-width: 860px) {
-        .hero { grid-template-columns: 1fr; padding: 56px 0 40px; }
-        .hero-content h1 { font-size: 38px; }
-        .section { padding: 40px 0; }
+        .hero { grid-template-columns: 1fr; padding: 56px 0 32px; }
+        .hero-content h1 { font-size: 36px; }
+        .section { padding: 38px 0; }
         .cta-buttons { flex-direction: column; }
         .btn { width: 100%; justify-content: center; }
     }
@@ -618,19 +358,28 @@
 </head>
 <body>
 
-<!-- BACKGROUND AUDIO — public-domain orchestral recording (Musopen / Wikimedia Commons, CORS-open, verified reachable) -->
+<!-- Fallback background audio: public-domain orchestral recording, always available if the SoundCloud embed can't load -->
 <audio id="bgMusic" loop preload="auto">
     <source src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg" type="audio/ogg">
 </audio>
 
+<!-- Hidden SoundCloud player — streams "The Dark Knight Rises Theme" via SoundCloud's own embed (not rehosted) -->
+<iframe id="sc-player"
+        style="position:fixed; width:1px; height:1px; opacity:0; bottom:0; right:0; pointer-events:none; overflow:hidden; border:0;"
+        scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F334455115&auto_play=false&show_artwork=false&visual=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&single_active=false">
+</iframe>
+<script src="https://w.soundcloud.com/player/api.js"></script>
+
 <div class="top-strip">
     <div class="top-strip-inner">
-        <div class="brand">Sai Priya <span>Darshan</span></div>
+        <div class="brand">Saipriyadarshan <span>Cindula</span></div>
         <nav class="top-nav">
             <a href="#experience">Experience</a>
+            <a href="#achievements">Achievements</a>
             <a href="#certificates">Credentials</a>
             <a href="#education">Education</a>
-            <a href="mailto:saipriyadarshan.c@zensar.com">Contact</a>
+            <a href="mailto:priyadarshan.iitk@gmail.com">Contact</a>
         </nav>
     </div>
 </div>
@@ -640,18 +389,31 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="eyebrow">AI / GenAI Architect</div>
-            <h1>Sai Priya Darshan<br><em>builds AI systems that ship.</em></h1>
-            <div class="title">Full-Stack Engineer &middot; <strong>LLM Orchestration</strong> &middot; Cloud Architecture</div>
+            <div class="eyebrow">GenAI Architect &middot; ML Engineering Manager</div>
+            <h1>Saipriyadarshan Cindula<br><em>ships agentic AI at enterprise scale.</em></h1>
+            <div class="title">15+ yrs software &middot; <strong>7+ yrs GenAI/ML</strong> &middot; BFSI &middot; SaaS &middot; EdTech</div>
             <p class="bio">
-                I design and deploy production-grade agentic AI systems — from multi-agent
-                orchestration and RAG pipelines to the cloud infrastructure that keeps them
-                reliable at scale. Enterprise experience, hands-on engineering.
+                GenAI Architect &amp; ML Engineering Manager delivering scalable AI products across
+                BFSI, SaaS, and EdTech. Deep expertise in Advanced RAG, Temporal agentic workflows,
+                multi-cloud (AWS/Azure/GCP), MCP server design, and Claude API integration — with a
+                track record of turning business KPIs into production architectures serving millions
+                of requests a day.
             </p>
             <div class="cta-buttons">
                 <a href="#experience" class="btn btn-primary">View Experience</a>
-                <a href="#certificates" class="btn btn-secondary">View Credentials</a>
-                <a href="mailto:saipriyadarshan.c@zensar.com" class="btn btn-secondary">Get in Touch</a>
+                <a href="#achievements" class="btn btn-secondary">Selected Achievements</a>
+                <a href="mailto:priyadarshan.iitk@gmail.com" class="btn btn-secondary">Get in Touch</a>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight-chip"><strong>15+ / 7+ yrs</strong>Software / ML &amp; GenAI</div>
+                <div class="highlight-chip"><strong>100k+ DAU</strong>On production LLM stacks</div>
+                <div class="highlight-chip"><strong>$10B+</strong>Revenue systems architected</div>
+                <div class="highlight-chip"><strong>5 countries</strong>Global delivery footprint</div>
+                <div class="highlight-chip"><strong>MCP &amp; A2A</strong>Protocol specialist</div>
+                <div class="highlight-chip"><strong>DeepEval / Arize</strong>Evaluation practitioner</div>
+                <div class="highlight-chip"><strong>99.8–99.99%</strong>Uptime delivered</div>
+                <div class="highlight-chip"><strong>Databricks / Fabric</strong>Certified GenAI</div>
             </div>
         </div>
 
@@ -662,50 +424,97 @@
                      src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=0&color=1a1a2e&data=https%3A%2F%2Fcspdgrit.github.io%2FFallnRise%2F"
                      alt="QR code linking to this profile"
                      width="188" height="188"
-                     onerror="this.parentElement.innerHTML='&lt;div class=&quot;qr-fallback&quot;&gt;QR unavailable — visit the link below directly&lt;/div&gt;'">
+                     onerror="this.parentElement.innerHTML='&lt;div class=&quot;qr-fallback&quot;&gt;QR unavailable — use the link below&lt;/div&gt;'">
             </div>
             <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:saipriyadarshan.c@zensar.com">saipriyadarshan.c@zensar.com</a></p>
-                <p><strong>Location:</strong> Bangalore, India</p>
-                <p><strong>Profile:</strong> <a href="https://cspdgrit.github.io/FallnRise/" target="_blank" rel="noopener">cspdgrit.github.io/FallnRise</a></p>
+                <p><strong>Email:</strong> <a href="mailto:priyadarshan.iitk@gmail.com">priyadarshan.iitk@gmail.com</a></p>
+                <p><strong>Phone:</strong> +91 83413 46818</p>
+                <p><strong>Location:</strong> Hyderabad, India</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/saipriya-cindula" target="_blank" rel="noopener">linkedin.com/in/saipriya-cindula</a></p>
             </div>
         </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section">
-        <div class="eyebrow">What I Do</div>
-        <h2>Core Competencies</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>AI &amp; GenAI</h3>
-                <p>LLM orchestration, Claude, GPT, Llama, RAG systems, agentic workflows, multi-agent design.</p>
+        <div class="eyebrow">Technical Depth</div>
+        <h2>Core Skills</h2>
+        <div class="skill-groups">
+            <div class="skill-group">
+                <h4>Languages</h4>
+                <div class="pill-row"><span class="pill">Python</span><span class="pill">JavaScript</span><span class="pill">Java</span><span class="pill">SQL</span><span class="pill">Bash</span></div>
             </div>
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>Architecture</h3>
-                <p>Microservices, system design, cloud-native patterns, scalability, performance engineering.</p>
+            <div class="skill-group">
+                <h4>GenAI Frameworks</h4>
+                <div class="pill-row"><span class="pill">LangGraph</span><span class="pill">LangChain</span><span class="pill">Temporal</span><span class="pill">DSPy</span><span class="pill">MCP</span><span class="pill">A2A</span><span class="pill">AgentFoundry</span></div>
             </div>
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>Backend</h3>
-                <p>Python, FastAPI, Spring AI, PostgreSQL, Redis, Docker, Kubernetes, CI/CD.</p>
+            <div class="skill-group">
+                <h4>LLM Providers</h4>
+                <div class="pill-row"><span class="pill">OpenAI</span><span class="pill">Anthropic</span><span class="pill">AWS Bedrock</span><span class="pill">Ollama</span></div>
             </div>
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>Frontend</h3>
-                <p>React, TypeScript, Vue.js, Next.js, TailwindCSS, UI/UX design systems.</p>
+            <div class="skill-group">
+                <h4>RAG &amp; Evaluation</h4>
+                <div class="pill-row"><span class="pill">Hybrid RAG</span><span class="pill">DeepEval</span><span class="pill">Ragas</span><span class="pill">Arize Phoenix</span><span class="pill">Langfuse</span><span class="pill">W&amp;B</span></div>
             </div>
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>Cloud</h3>
-                <p>AWS, GCP, Azure, serverless, infrastructure as code, DevOps practices.</p>
+            <div class="skill-group">
+                <h4>Fine-tuning</h4>
+                <div class="pill-row"><span class="pill">LoRA</span><span class="pill">QLoRA</span><span class="pill">PEFT</span></div>
             </div>
-            <div class="skill-card">
-                <span class="icon">◆</span>
-                <h3>Data &amp; ML</h3>
-                <p>Data engineering, ML models, vector databases, embeddings, analytics pipelines.</p>
+            <div class="skill-group">
+                <h4>Claude Ecosystem</h4>
+                <div class="pill-row"><span class="pill">Claude API</span><span class="pill">Claude Skills</span><span class="pill">Claude Code</span><span class="pill">CoWork</span><span class="pill">Tool Use</span><span class="pill">Prompt Caching</span><span class="pill">Structured Output</span></div>
+            </div>
+            <div class="skill-group">
+                <h4>Cloud &amp; Infra</h4>
+                <div class="pill-row"><span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">GCP</span><span class="pill">SageMaker</span><span class="pill">AKS</span><span class="pill">GKE</span><span class="pill">EKS</span></div>
+            </div>
+            <div class="skill-group">
+                <h4>DevOps</h4>
+                <div class="pill-row"><span class="pill">Docker</span><span class="pill">Kubernetes</span><span class="pill">Terraform</span><span class="pill">GitHub Actions</span><span class="pill">CI/CD</span></div>
+            </div>
+            <div class="skill-group">
+                <h4>Observability</h4>
+                <div class="pill-row"><span class="pill">OpenTelemetry</span><span class="pill">NeMo Guardrails</span><span class="pill">Kibana</span><span class="pill">Grafana</span></div>
+            </div>
+            <div class="skill-group">
+                <h4>Security &amp; Compliance</h4>
+                <div class="pill-row"><span class="pill">SOC-2</span><span class="pill">GDPR</span><span class="pill">Unity Catalog</span><span class="pill">IAM</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section" id="achievements">
+        <div class="eyebrow">Impact</div>
+        <h2>Selected Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h3>AgentFoundry / ZenseAI</h3>
+                <p>Reusable BFSI agent catalogue — digital onboarding, ZenARC regulatory compliance — via MCP, Claude Skills, Claude Code &amp; CoWork. Deployed for Standard Bank, NedBank, Investec, Mastercard, and EBRD.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>NedBank AI Portfolio Intelligence</h3>
+                <p>Autonomous treasury agents — LiquidityGuard, CashPredictor, ComplianceWatch. 70% ops reduction, sub-2s decision latency.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>AML/KYC Sanctions Screening</h3>
+                <p>5-agent LangGraph pipeline (OFAC, FATF, Basel III); Qdrant hybrid RAG, self-hosted Ollama LLMs, PostgreSQL audit trail — fully self-hosted via Docker Compose.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>ISO 20022 / SWIFT Migration</h3>
+                <p>MT101/103 → pain.001/pacs.008 migration engine for Standard Bank via a 7-layer GenAI agentic orchestrator.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>RPG Innovation Festival</h3>
+                <p>ZenArc AI Compliance Platform delivered across 7 RPG Group subsidiaries — CEAT, KEC, Zensar, RPG Life Sciences, CESC, Spencer's, Harrisons.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>AI Hackathon — Zenlabs (3rd Prize)</h3>
+                <p>ZenAudit — non-invasive, multi-agentic banking compliance with proactive anomaly detection and automated remediation.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Reliability at Scale</h3>
+                <p>99.8–99.99% uptime; 25% cost reduction; $10B+ revenue systems; zero P0 incidents.</p>
             </div>
         </div>
     </section>
@@ -714,43 +523,71 @@
     <section class="section" id="experience">
         <div class="eyebrow">Career</div>
         <h2>Professional Experience</h2>
-
         <div class="timeline">
+
             <div class="experience-item">
-                <h3>Senior AI / GenAI Architect</h3>
-                <div class="role">Enterprise AI Systems</div>
-                <div class="period">2024 — Present</div>
-                <ul>
-                    <li>Designed and deployed production-grade agentic AI systems for enterprise workflows</li>
-                    <li>Orchestrated LLM pipelines with multi-agent reasoning and memory management</li>
-                    <li>Built AI governance frameworks ensuring compliance, auditability, and responsible AI</li>
-                    <li>Led cross-functional AI adoption initiatives driving 10x productivity gains</li>
-                </ul>
+                <h3>Zensar Technologies</h3>
+                <div class="role">Sr GenAI Architect &middot; Temporal AI &middot; GenAI Solutions &middot; Scalable Architecture</div>
+                <div class="period">Jul 2025 — Present</div>
+                <p class="desc">Owns BFSI multi-turn bots via Temporal for 1000+ EU &amp; South Africa users; built an MCP server registry (compliance, payments, doc Q&amp;A) with A2A agent-tool binding under Unity Catalog AI governance. Architected AgentFoundry — reusable BFSI agents composed via MCP, Claude Skills, Claude Code, and CoWork with full-stack Python/React delivery. Integrated Claude API prompt caching &amp; structured outputs, cutting token spend 40%; wired DeepEval metrics into CI/CD gates and layered NeMo Guardrails for PII and prompt-injection prevention.</p>
             </div>
 
             <div class="experience-item">
-                <h3>Full-Stack AI Engineer</h3>
-                <div class="role">Advanced AI/ML Projects</div>
-                <div class="period">2023 — 2024</div>
-                <ul>
-                    <li>Developed end-to-end AI systems: FastAPI backend + React frontend + cloud infrastructure</li>
-                    <li>Implemented RAG architectures with vector databases and semantic search</li>
-                    <li>Optimized inference costs and scaling for production LLM deployments</li>
-                    <li>Built reusable AI frameworks and templates for team adoption</li>
-                </ul>
+                <h3>NVIDIA Corporation <span style="color:var(--text-faint); font-weight:500;">(via Birlasoft)</span></h3>
+                <div class="role">Senior LLM Engineer &middot; LLM Solutions &middot; Architecture</div>
+                <div class="period">May 2024 — Jul 2025</div>
+                <p class="desc">Designed Advanced RAG + Hybrid BM25/Dense pipelines for 5,000+ users; fine-tuned LoRA/QLoRA/PEFT adapters on OpenAI, Anthropic, and Bedrock; integrated DSPy prompt-tuning, cutting manual effort 60%. Built a DeepEval evaluation harness as a CI/CD gate, monitored with Arize Phoenix OTel spans, versioned adapters in W&amp;B, and ran nightly Ragas benchmarks. Delivered an internal knowledge assistant via Claude API multi-doc prompt caching at sub-400ms p95 latency for 500+ engineers.</p>
             </div>
 
             <div class="experience-item">
-                <h3>Cloud Solutions Architect</h3>
-                <div class="role">Enterprise Infrastructure</div>
-                <div class="period">2020 — 2023</div>
-                <ul>
-                    <li>Designed scalable cloud architectures for 100+ enterprise clients</li>
-                    <li>Led digital transformation initiatives with modern DevOps practices</li>
-                    <li>Mentored engineering teams on cloud-native design patterns</li>
-                    <li>Reduced infrastructure costs by 40% through optimization and automation</li>
-                </ul>
+                <h3>Goldman Sachs</h3>
+                <div class="role">Vice President — LLM Engineering &amp; DevOps &middot; Full-Stack LLM Development</div>
+                <div class="period">Jun 2023 — Apr 2024</div>
+                <p class="desc">Delivered end-to-end LLM apps (Python/FastAPI + React/Next.js) with JWT on Azure AKS; gRPC &amp; WebSockets at &lt;200ms conversational latency. Applied BERT &amp; LIWC for analytics, Pydantic structured outputs for earnings-call extraction, and implemented an LLM red-teaming guardrail playbook.</p>
             </div>
+
+            <div class="experience-item">
+                <h3>Unify Technologies</h3>
+                <div class="role">Lead LLM Engineer — Technical Delivery &middot; Production LLM Systems</div>
+                <div class="period">Oct 2022 — Jun 2023</div>
+                <p class="desc">Deployed STT/TTS products (100k+ users, 99.8% uptime) on Azure Kubernetes with full CI/CD; built a FAISS embedding recommender, reducing cost 25%.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Alation Inc.</h3>
+                <div class="role">Principal LLM &amp; Data Engineer &middot; Scalable LLM Architecture</div>
+                <div class="period">Jun 2020 — Sep 2022</div>
+                <p class="desc">Architected a distributed metadata platform — 1M+ objects/min on AWS (EKS, RDS, S3); SOC-2 compliant, GDPR-ready with field-level encryption.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Model N Inc.</h3>
+                <div class="role">Principal Software Architect &middot; Business-Technical Translation</div>
+                <div class="period">May 2017 — May 2020</div>
+                <p class="desc">Built ML pricing models on $10B+ revenue; multi-region AWS infra (Redshift, VPC, IAM) at 99.99% SLA with blue-green zero-downtime releases.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Next Education India</h3>
+                <div class="role">Senior Software Engineer &middot; Agile Development</div>
+                <div class="period">May 2015 — May 2017</div>
+                <p class="desc">Led a Scrum team; improved outcomes 35% via adaptive testing and an NLP question-generator (TF-IDF &amp; Word2Vec) for 50,000+ students.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>InfoEdge (Naukri.com)</h3>
+                <div class="role">Software Engineer &middot; Production ML Systems</div>
+                <div class="period">May 2011 — May 2015</div>
+                <p class="desc">CTR &amp; salary-prediction at 10k rps; real-time monitoring via Kibana &amp; Grafana with automated drift-triggered model retraining pipelines.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Burning Glass Technologies</h3>
+                <div class="role">ML Engineer &middot; Software Development</div>
+                <div class="period">Jul 2009 — Apr 2011</div>
+                <p class="desc">CV–job matching engine (+30% accuracy via gradient-boosted trees) over a canonical 5,000-node skill taxonomy powering all downstream analytics.</p>
+            </div>
+
         </div>
     </section>
 
@@ -762,42 +599,65 @@
 
             <div class="cert-card">
                 <div class="cert-image">
-                    <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect Foundations badge">
-                    <div class="cert-badge">🔒 VERIFIED</div>
+                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06d6c1a7-fd58-4b50-9c79-faa1d59070e9" data-share-badge-host="https://www.credly.com"></div>
                 </div>
                 <div class="cert-content">
                     <h3>Claude Certified Architect Foundations</h3>
                     <p>Anthropic Official Certification</p>
                     <p class="date">Issued March 2024 &middot; Expires March 2027</p>
-                    <button class="verify-btn" onclick="verifyCertificate('ccaf-2024')">Verify Certificate</button>
+                    <div class="cert-real-badge">✓ Live-verified on Credly</div>
                 </div>
             </div>
 
             <div class="cert-card">
                 <div class="cert-image">
                     <img src="aws-cloud-quest-generative-ai-practitioner-training.png" alt="AWS Cloud Quest GenAI Practitioner badge">
-                    <div class="cert-badge">🔒 VERIFIED</div>
                 </div>
                 <div class="cert-content">
                     <h3>AWS Cloud Quest: GenAI Practitioner</h3>
                     <p>Amazon Web Services Training</p>
                     <p class="date">Issued April 2024</p>
-                    <button class="verify-btn" onclick="verifyCertificate('aws-genai-2024')">Verify Certificate</button>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image"><div class="cert-icon">DBX</div></div>
+                <div class="cert-content">
+                    <h3>Databricks GenAI Associate</h3>
+                    <p>Databricks Certification</p>
+                    <p class="date">Active</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image"><div class="cert-icon">MSF</div></div>
+                <div class="cert-content">
+                    <h3>MS Fabric Lakehouse</h3>
+                    <p>Microsoft Certification</p>
+                    <p class="date">Active</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image"><div class="cert-icon">AWS</div></div>
+                <div class="cert-content">
+                    <h3>AWS Solutions Architect</h3>
+                    <p>Amazon Web Services Certification</p>
+                    <p class="date">Active</p>
                 </div>
             </div>
 
             <div class="cert-card">
                 <div class="cert-image">
                     <img src="score.png" alt="Professional assessment score report">
-                    <div class="cert-badge">🔒 VERIFIED</div>
                 </div>
                 <div class="cert-content">
                     <h3>Assessment Score Report</h3>
                     <p>Professional Evaluation</p>
                     <p class="date">Issued May 2024</p>
-                    <button class="verify-btn" onclick="verifyCertificate('assessment-score-2024')">Verify Certificate</button>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -805,29 +665,41 @@
     <section class="section" id="education">
         <div class="eyebrow">Foundation</div>
         <h2>Education</h2>
-
         <div class="timeline">
             <div class="experience-item">
-                <h3>Advanced Studies in Cloud &amp; AI Architecture</h3>
-                <div class="role">Professional Development</div>
-                <div class="period">2022 — 2024</div>
-                <ul>
-                    <li>Specialized training in GenAI systems design and deployment</li>
-                    <li>Enterprise architecture and digital transformation</li>
-                    <li>Cloud-native microservices and Kubernetes orchestration</li>
-                </ul>
+                <h3>IIT Kanpur</h3>
+                <div class="role">B.Tech, Computer Science</div>
+                <div class="period">2009</div>
+                <p class="desc">Foundational engineering degree from one of India's premier technical institutes.</p>
             </div>
-
             <div class="experience-item">
-                <h3>Bachelor's in Computer Science</h3>
-                <div class="role">Core Engineering Foundation</div>
-                <div class="period">2016 — 2020</div>
-                <ul>
-                    <li>Data structures, algorithms, operating systems</li>
-                    <li>Database design, web technologies, systems architecture</li>
-                    <li>Final-year project: distributed ML system design</li>
-                </ul>
+                <h3>INSEAD</h3>
+                <div class="role">Executive MBA, Technology Leadership</div>
+                <div class="period">2015 &middot; 92% Distinction</div>
+                <p class="desc">Executive education focused on leading technology organizations at global scale.</p>
             </div>
+            <div class="experience-item">
+                <h3>VBCL Hyderabad</h3>
+                <div class="role">LLB, Technology &amp; Privacy Law</div>
+                <div class="period">2025 &middot; First Class</div>
+                <p class="desc">Law degree specializing in technology and data-privacy regulation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH & HONOURS -->
+    <section class="section" id="honours">
+        <div class="eyebrow">Beyond the Day Job</div>
+        <h2>Research &amp; Academic Honours</h2>
+        <div class="honours-list">
+            <div class="honour-item"><strong>Télécom Paris Research Fellow (2008)</strong> — distributed multimedia systems fellowship at a top European engineering school.</div>
+            <div class="honour-item"><strong>ACM Publication</strong> — ACM Multimedia 2008 (pp. 1089–1092).</div>
+            <div class="honour-item"><strong>Pratibha Gold Medal &amp; Scholarship</strong> — AP Government award for outstanding academic merit.</div>
+            <div class="honour-item"><strong>District Topper &amp; Gold Medalist</strong> — ranked first in engineering at district level.</div>
+            <div class="honour-item"><strong>NTSE National Scholar</strong> — top 1% in India's premier science &amp; mathematics talent search.</div>
+            <div class="honour-item"><strong>Hackathon Championships</strong> — multiple first-place finishes in enterprise AI and fintech events.</div>
+            <div class="honour-item"><strong>Amateur Radio Licensee</strong> — call sign VU2PDQ.</div>
+            <div class="honour-item"><strong>BAR Qualified — AIBE 20</strong> — certified to practise law in India.</div>
         </div>
     </section>
 
@@ -837,42 +709,40 @@
 <div class="music-player" id="musicPlayer">
     <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" aria-label="Play or pause background music">▶</button>
     <div class="music-info">
-        <div class="music-title">In the Hall of the Mountain King</div>
-        <div class="music-artist">Edvard Grieg &middot; Public Domain Recording</div>
+        <div class="music-title" id="musicTitle">The Dark Knight Rises Theme</div>
+        <div class="music-artist" id="musicArtist">Valtteri Korjonen &middot; via SoundCloud</div>
         <div class="music-hint" id="musicHint">Tap anywhere to enable sound</div>
     </div>
     <div class="equalizer" id="equalizer">
-        <div class="equalizer-bar"></div>
-        <div class="equalizer-bar"></div>
-        <div class="equalizer-bar"></div>
+        <div class="equalizer-bar"></div><div class="equalizer-bar"></div><div class="equalizer-bar"></div>
     </div>
     <input type="range" min="0" max="100" value="35" class="volume-slider" id="volumeSlider" aria-label="Volume">
 </div>
 
-<!-- VERIFICATION MODAL -->
-<div id="verificationModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeVerification()">&times;</span>
-        <h2>Certificate Verification</h2>
-        <div class="verification-status" id="verificationStatus">✓ Certificate Verified — Authentic &amp; Unaltered</div>
-        <span class="label">Certificate Details</span>
-        <div class="verification-detail" id="verificationDetails">Loading verification details...</div>
-        <span class="label">Tamper Protection</span>
-        <div class="verification-detail">SHA-256 hash checked against stored record on every view.</div>
-        <span class="label">Security Features</span>
-        <div class="verification-detail">
-            Watermarked digital signature<br>
-            Cryptographic hash verification<br>
-            Timestamp authentication<br>
-            Anti-plagiarism protection
+<!-- RAG-LITE PROFILE Q&A -->
+<div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" id="chatToggle"><span>💬</span><span class="label">Ask about my profile</span></button>
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <div>
+                <div class="chat-title">Profile Q&amp;A</div>
+                <div class="chat-sub">On-device retrieval over my CV — no external AI API, nothing leaves your browser.</div>
+            </div>
+            <span class="chat-close" id="chatClose">&times;</span>
         </div>
+        <div class="chat-chips" id="chatChips"></div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <form class="chat-input-row" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask about experience, skills, certifications…" autocomplete="off">
+            <button type="submit">➤</button>
+        </form>
     </div>
 </div>
 
 <footer>
-    <p>© 2024–2026 Sai Priya Darshan &middot; All Rights Reserved</p>
-    <p>Background music: "In the Hall of the Mountain King" (Edvard Grieg) &middot; public-domain recording via Wikimedia Commons</p>
-    <p><a href="https://github.com/cspdgrit" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/sai-priya" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="mailto:saipriyadarshan.c@zensar.com">Email</a></p>
+    <p>© 2024–2026 Saipriyadarshan Cindula &middot; All Rights Reserved</p>
+    <p>Theme music: "The Dark Knight Rises Theme" (Valtteri Korjonen) via SoundCloud embed — falls back to a public-domain recording if unavailable.</p>
+    <p><a href="https://github.com/cspdgrit" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://linkedin.com/in/saipriya-cindula" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="mailto:priyadarshan.iitk@gmail.com">Email</a></p>
 </footer>
 
 <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
@@ -881,13 +751,27 @@
 (function () {
     'use strict';
 
+    /* ===================== AUDIO CONTROLLER =====================
+       Primary: "The Dark Knight Rises Theme" (Valtteri Korjonen),
+       streamed via SoundCloud's own official widget — not rehosted,
+       so this respects the uploader's embed/streaming permissions.
+       Fallback: a public-domain orchestral recording (Grieg) hosted
+       on Wikimedia Commons, used automatically if SoundCloud can't
+       load (blocked domain, ad-blocker, track removed, etc).
+    ================================================================ */
+
     var bgMusic = document.getElementById('bgMusic');
     var musicToggle = document.getElementById('musicToggle');
     var musicPlayer = document.getElementById('musicPlayer');
     var volumeSlider = document.getElementById('volumeSlider');
     var musicHint = document.getElementById('musicHint');
+    var musicTitleEl = document.getElementById('musicTitle');
+    var musicArtistEl = document.getElementById('musicArtist');
+
+    var scWidget = null;
+    var scReady = false;
+    var useSoundCloud = true;
     var isPlaying = false;
-    var userHasInteracted = false;
 
     bgMusic.volume = 0.35;
 
@@ -895,52 +779,83 @@
         isPlaying = playing;
         musicToggle.textContent = playing ? '❚❚' : '▶';
         musicPlayer.classList.toggle('playing', playing);
-        if (playing && musicHint) {
-            musicHint.style.display = 'none';
-        }
+        if (playing && musicHint) musicHint.style.display = 'none';
+    }
+
+    function switchToFallback() {
+        if (!useSoundCloud) return;
+        useSoundCloud = false;
+        musicTitleEl.textContent = 'In the Hall of the Mountain King';
+        musicArtistEl.textContent = 'Edvard Grieg · Public Domain Recording';
     }
 
     function attemptPlay() {
+        if (useSoundCloud && scReady && scWidget) {
+            try {
+                scWidget.play();
+                setPlayingUI(true);
+                return;
+            } catch (e) {
+                switchToFallback();
+            }
+        }
         var p = bgMusic.play();
         if (p && typeof p.then === 'function') {
-            p.then(function () {
-                setPlayingUI(true);
-            }).catch(function () {
-                setPlayingUI(false);
-            });
+            p.then(function () { setPlayingUI(true); }).catch(function () { setPlayingUI(false); });
         }
+    }
+    window.attemptPlay = attemptPlay;
+
+    function pauseAudio() {
+        if (useSoundCloud && scReady && scWidget) {
+            try { scWidget.pause(); } catch (e) {}
+        } else {
+            bgMusic.pause();
+        }
+        setPlayingUI(false);
     }
 
     function toggleMusic() {
-        userHasInteracted = true;
-        if (isPlaying) {
-            bgMusic.pause();
-            setPlayingUI(false);
-        } else {
-            attemptPlay();
-        }
+        if (isPlaying) pauseAudio(); else attemptPlay();
     }
     window.toggleMusic = toggleMusic;
 
     volumeSlider.addEventListener('input', function () {
-        bgMusic.volume = this.value / 100;
+        var v = this.value;
+        if (useSoundCloud && scReady && scWidget) { try { scWidget.setVolume(v); } catch (e) {} }
+        bgMusic.volume = v / 100;
     });
 
-    // Try to play immediately on load. Modern browsers block audio-with-sound
-    // until the user has interacted with the page at least once — this is a
-    // browser security policy, not something a website can override. So:
-    // 1) we attempt play() right away (works for repeat visitors on some browsers)
-    // 2) if blocked, the very first click/tap/keypress anywhere on the page
-    //    unmutes and starts playback automatically — the closest thing to
-    //    true "instant" autoplay the web platform allows.
-    window.addEventListener('load', function () {
-        attemptPlay();
-    });
+    // Initialize the SoundCloud Widget API against our hidden iframe
+    (function initSoundCloud() {
+        var iframe = document.getElementById('sc-player');
+        if (!iframe || typeof SC === 'undefined') { switchToFallback(); return; }
+        try {
+            scWidget = SC.Widget(iframe);
+            scWidget.bind(SC.Widget.Events.READY, function () {
+                scReady = true;
+                try { scWidget.setVolume(35); } catch (e) {}
+                attemptPlay();
+            });
+            scWidget.bind(SC.Widget.Events.ERROR, function () { switchToFallback(); attemptPlay(); });
+            // SoundCloud widget has no native loop flag — restart on finish
+            scWidget.bind(SC.Widget.Events.FINISH, function () {
+                try { scWidget.seekTo(0); scWidget.play(); } catch (e) {}
+            });
+        } catch (e) {
+            switchToFallback();
+        }
+    })();
+
+    // If SoundCloud hasn't initialized within 4s (blocked domain, corporate
+    // proxy, ad-blocker), fall back automatically so audio still plays.
+    setTimeout(function () { if (!scReady) switchToFallback(); }, 4000);
+
+    window.addEventListener('load', function () { attemptPlay(); });
 
     ['pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
-        document.addEventListener(evt, function firstInteraction() {
+        document.addEventListener(evt, function onFirstInteraction() {
             if (!isPlaying) attemptPlay();
-            userHasInteracted = true;
         }, { once: true, passive: true });
     });
 
@@ -952,61 +867,190 @@
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             var target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
     });
 
-    // Certificate verification data
-    var certificates = {
-        'ccaf-2024': {
-            name: 'Claude Certified Architect Foundations',
-            issuer: 'Anthropic',
-            date: 'March 2024',
-            hash: 'ccaf7e3a9b4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t',
-            credential: 'CCAF-2024-SPD-001',
-            expiry: 'March 2027'
-        },
-        'aws-genai-2024': {
-            name: 'AWS Cloud Quest: GenAI Practitioner',
-            issuer: 'Amazon Web Services',
-            date: 'April 2024',
-            hash: 'aws4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x',
-            credential: 'AWS-GENAI-SPD-2024-789',
-            expiry: 'Lifetime'
-        },
-        'assessment-score-2024': {
-            name: 'Professional Assessment Score Report',
-            issuer: 'Professional Evaluation Board',
-            date: 'May 2024',
-            hash: 'assess3a9b4f2c1d8e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u',
-            credential: 'ASSESS-SPD-2024-956',
-            expiry: 'May 2025'
+    /* ===================== RAG-LITE PROFILE Q&A =====================
+       A small retrieval pipeline that runs entirely client-side:
+       tokenize the question -> score against knowledge chunks pulled
+       straight from the CV -> return the best-matching chunk(s) as the
+       answer. No LLM call, no API key, no data leaves the browser —
+       a deliberately lightweight nod to the RAG pattern.
+    ==================================================================== */
+
+    var KB = [
+        { id: 'summary', title: 'Profile Summary', tags: ['who', 'summary', 'profile', 'about', 'overview', 'background', 'introduce'],
+          text: "GenAI Architect & ML Engineering Manager with 15+ years in software and 7+ years delivering scalable AI products across BFSI, SaaS, and EdTech. Deep expertise in Advanced RAG, Temporal agentic workflows, multi-cloud (AWS/Azure/GCP), MCP server design, Claude API integration, and AI evaluation via DeepEval and Arize Phoenix." },
+        { id: 'highlights', title: 'Key Highlights', tags: ['highlight', 'highlights', 'impact', 'scale', 'stats', 'numbers'],
+          text: "15+ years in software, 7+ in ML/GenAI · 100k+ daily active users on production LLM stacks · Multi-agent Temporal/LangGraph expert · Certified in Databricks GenAI and MS Fabric · Delivery across 5 countries · Architected systems supporting $10B+ in revenue · MCP & A2A protocol specialist · DeepEval / Arize Phoenix practitioner." },
+        { id: 'skills-lang', title: 'Programming Languages', tags: ['language', 'languages', 'python', 'javascript', 'java', 'sql', 'bash', 'code', 'coding', 'program'],
+          text: "Python, JavaScript, Java, SQL, and Bash." },
+        { id: 'skills-genai', title: 'GenAI Frameworks', tags: ['genai', 'framework', 'frameworks', 'langgraph', 'langchain', 'temporal', 'dspy', 'mcp', 'a2a', 'agentfoundry', 'agent', 'agents', 'agentic', 'multi-agent'],
+          text: "LangGraph, LangChain, Temporal, DSPy, MCP (Model Context Protocol), A2A (agent-to-agent), and the in-house AgentFoundry agent catalogue." },
+        { id: 'skills-llm', title: 'LLM Providers', tags: ['llm', 'provider', 'providers', 'openai', 'anthropic', 'claude', 'bedrock', 'ollama', 'model', 'models'],
+          text: "OpenAI, Anthropic (Claude), AWS Bedrock, and self-hosted models via Ollama." },
+        { id: 'skills-rag', title: 'RAG & Evaluation', tags: ['rag', 'retrieval', 'evaluation', 'eval', 'deepeval', 'ragas', 'arize', 'phoenix', 'langfuse', 'wandb', 'w&b', 'hallucination', 'tech', 'stack'],
+          text: "Hybrid RAG (BM25 + dense retrieval), DeepEval, Ragas, Arize Phoenix, Langfuse, and Weights & Biases for evaluation, tracing, and faithfulness/hallucination monitoring." },
+        { id: 'skills-finetune', title: 'Fine-tuning', tags: ['finetune', 'fine-tuning', 'lora', 'qlora', 'peft', 'adapter', 'adapters', 'training'],
+          text: "LoRA, QLoRA, and PEFT adapter fine-tuning on OpenAI, Anthropic, and Bedrock models." },
+        { id: 'skills-claude', title: 'Claude Ecosystem', tags: ['claude', 'anthropic', 'claude api', 'claude skills', 'claude code', 'cowork', 'tool use', 'prompt caching', 'structured output'],
+          text: "Hands-on with the Claude API, Claude Skills, Claude Code, CoWork, tool use, prompt caching, and structured output — including cutting token spend 40% via prompt caching at Zensar." },
+        { id: 'skills-cloud', title: 'Cloud & Infra', tags: ['cloud', 'aws', 'azure', 'gcp', 'sagemaker', 'aks', 'gke', 'eks', 'infra', 'infrastructure'],
+          text: "AWS, Azure, and GCP, including SageMaker, Azure Kubernetes Service (AKS), Google Kubernetes Engine (GKE), and Elastic Kubernetes Service (EKS)." },
+        { id: 'skills-devops', title: 'DevOps', tags: ['devops', 'docker', 'kubernetes', 'k8s', 'terraform', 'github actions', 'ci/cd', 'cicd'],
+          text: "Docker, Kubernetes, Terraform, and GitHub Actions CI/CD pipelines." },
+        { id: 'skills-observability', title: 'Observability', tags: ['observability', 'opentelemetry', 'otel', 'nemo', 'guardrails', 'kibana', 'grafana', 'monitoring', 'tracing'],
+          text: "OpenTelemetry tracing, NeMo Guardrails for PII and prompt-injection prevention, Kibana, and Grafana." },
+        { id: 'skills-security', title: 'Security & Compliance', tags: ['security', 'compliance', 'soc-2', 'soc2', 'gdpr', 'unity catalog', 'iam', 'governance'],
+          text: "SOC-2, GDPR, Unity Catalog AI governance, and IAM-based access control." },
+        { id: 'ach-agentfoundry', title: 'AgentFoundry / ZenseAI', tags: ['agentfoundry', 'zenseai', 'bfsi', 'standard bank', 'nedbank', 'investec', 'mastercard', 'ebrd', 'onboarding', 'zenarc'],
+          text: "Built a reusable BFSI agent catalogue — digital onboarding and ZenARC regulatory compliance — via MCP, Claude Skills, Claude Code & CoWork. Deployed for Standard Bank, NedBank, Investec, Mastercard, and EBRD." },
+        { id: 'ach-nedbank', title: 'NedBank AI Portfolio Intelligence', tags: ['nedbank', 'treasury', 'liquidityguard', 'cashpredictor', 'compliancewatch', 'ops reduction', 'latency'],
+          text: "Built autonomous treasury agents — LiquidityGuard, CashPredictor, and ComplianceWatch — cutting operations effort by 70% with sub-2-second decision latency." },
+        { id: 'ach-amlkyc', title: 'AML/KYC Sanctions Screening', tags: ['aml', 'kyc', 'sanctions', 'ofac', 'fatf', 'basel', 'langgraph', 'qdrant', 'ollama', 'postgresql', 'docker'],
+          text: "Designed a 5-agent LangGraph pipeline for OFAC, FATF, and Basel III sanctions screening, using Qdrant hybrid RAG, self-hosted Ollama LLMs, and a PostgreSQL audit trail — fully self-hosted via Docker Compose." },
+        { id: 'ach-swift', title: 'ISO 20022 / SWIFT Migration', tags: ['iso20022', 'swift', 'mt101', 'mt103', 'pain.001', 'pacs.008', 'standard bank', 'migration'],
+          text: "Built an MT101/103 to pain.001/pacs.008 migration engine for Standard Bank via a 7-layer GenAI agentic orchestrator." },
+        { id: 'ach-rpg', title: 'RPG Innovation Festival', tags: ['rpg', 'zenarc', 'ceat', 'kec', 'zensar', 'cesc', 'spencers', 'harrisons', 'compliance platform'],
+          text: "Delivered the ZenArc AI Compliance Platform across 7 RPG Group subsidiaries: CEAT, KEC, Zensar, RPG Life Sciences, CESC, Spencer's, and Harrisons." },
+        { id: 'ach-hackathon', title: 'AI Hackathon — Zenlabs (3rd Prize)', tags: ['hackathon', 'zenlabs', 'zenaudit', 'prize', 'award', 'win'],
+          text: "Won 3rd prize at the Zenlabs AI Hackathon with ZenAudit — a non-invasive, multi-agentic banking-compliance system with proactive anomaly detection and automated remediation." },
+        { id: 'ach-reliability', title: 'Reliability at Scale', tags: ['reliability', 'uptime', 'sla', 'cost reduction', 'p0', 'incidents'],
+          text: "Consistently delivered 99.8–99.99% uptime, 25% cost reduction, and zero P0 incidents across systems supporting $10B+ in revenue." },
+        { id: 'job-zensar', title: 'Zensar Technologies — Sr GenAI Architect (current role, Jul 2025–Present)', tags: ['zensar', 'current', 'current role', 'now', 'today', 'job', 'temporal', 'mcp', 'a2a', 'claude', 'deepeval', 'nemo'],
+          text: "Owns BFSI multi-turn bots via Temporal for 1000+ EU & South Africa users; built an MCP server registry with A2A agent-tool binding under Unity Catalog AI governance. Architected AgentFoundry with full-stack Python/React delivery. Integrated Claude API prompt caching & structured outputs, cutting token spend 40%; wired DeepEval into CI/CD gates and layered NeMo Guardrails for PII and prompt-injection prevention." },
+        { id: 'job-nvidia', title: 'NVIDIA Corporation (via Birlasoft) — Senior LLM Engineer (May 2024–Jul 2025)', tags: ['nvidia', 'birlasoft', 'rag', 'lora', 'qlora', 'peft', 'dspy', 'deepeval', 'arize'],
+          text: "Designed Advanced RAG + Hybrid BM25/Dense retrieval pipelines for 5,000+ users; fine-tuned LoRA/QLoRA/PEFT adapters on OpenAI, Anthropic, and Bedrock; integrated DSPy prompt-tuning, cutting manual effort 60%. Delivered an internal knowledge assistant via Claude API at sub-400ms p95 latency for 500+ engineers." },
+        { id: 'job-goldman', title: 'Goldman Sachs — Vice President, LLM Engineering & DevOps (Jun 2023–Apr 2024)', tags: ['goldman sachs', 'goldman', 'vp', 'vice president', 'fastapi', 'react', 'nextjs', 'azure', 'aks', 'grpc', 'websockets'],
+          text: "Delivered end-to-end LLM applications (Python/FastAPI + React/Next.js) with JWT auth on Azure AKS, using gRPC and WebSockets at under 200ms conversational latency. Applied BERT and LIWC for analytics and implemented an LLM red-teaming guardrail playbook." },
+        { id: 'job-unify', title: 'Unify Technologies — Lead LLM Engineer (Oct 2022–Jun 2023)', tags: ['unify', 'stt', 'tts', 'azure kubernetes', 'faiss'],
+          text: "Deployed speech-to-text/text-to-speech products to 100k+ users at 99.8% uptime on Azure Kubernetes with full CI/CD, and built a FAISS embedding recommender that reduced cost by 25%." },
+        { id: 'job-alation', title: 'Alation Inc. — Principal LLM & Data Engineer (Jun 2020–Sep 2022)', tags: ['alation', 'metadata', 'eks', 'rds', 's3', 'soc-2', 'gdpr'],
+          text: "Architected a distributed metadata platform processing 1M+ objects/minute on AWS (EKS, RDS, S3), SOC-2 compliant and GDPR-ready with field-level encryption." },
+        { id: 'job-modeln', title: 'Model N Inc. — Principal Software Architect (May 2017–May 2020)', tags: ['model n', 'pricing', 'redshift', 'vpc', 'iam', 'blue-green'],
+          text: "Built ML pricing models on $10B+ in revenue with multi-region AWS infrastructure (Redshift, VPC, IAM) at 99.99% SLA, using blue-green zero-downtime releases." },
+        { id: 'job-nexted', title: 'Next Education India — Senior Software Engineer (May 2015–May 2017)', tags: ['next education', 'scrum', 'nlp', 'tf-idf', 'word2vec', 'edtech'],
+          text: "Led a Scrum team, improving learning outcomes 35% via adaptive testing and an NLP question-generator (TF-IDF & Word2Vec) for 50,000+ students." },
+        { id: 'job-infoedge', title: 'InfoEdge (Naukri.com) — Software Engineer (May 2011–May 2015)', tags: ['infoedge', 'naukri', 'ctr', 'salary prediction', 'kibana', 'grafana'],
+          text: "Built CTR and salary-prediction models serving 10,000 requests/second, with real-time monitoring via Kibana & Grafana and automated drift-triggered retraining." },
+        { id: 'job-burningglass', title: 'Burning Glass Technologies — ML Engineer (Jul 2009–Apr 2011)', tags: ['burning glass', 'cv matching', 'job matching', 'gradient boosted trees', 'skill taxonomy'],
+          text: "Built a CV–job matching engine (+30% accuracy via gradient-boosted trees) over a canonical 5,000-node skill taxonomy powering all downstream analytics." },
+        { id: 'edu-iitk', title: 'Education — IIT Kanpur', tags: ['education', 'iit', 'iit kanpur', 'btech', 'college', 'university', 'degree', 'study', 'studied'],
+          text: "B.Tech in Computer Science from IIT Kanpur (2009)." },
+        { id: 'edu-insead', title: 'Education — INSEAD', tags: ['education', 'insead', 'mba', 'executive mba', 'leadership'],
+          text: "Executive MBA in Technology Leadership from INSEAD (2015, 92% Distinction)." },
+        { id: 'edu-vbcl', title: 'Education — VBCL Hyderabad', tags: ['education', 'law', 'llb', 'vbcl', 'privacy law'],
+          text: "LLB in Technology & Privacy Law from VBCL Hyderabad (2025, First Class)." },
+        { id: 'cert-list', title: 'Certifications', tags: ['certification', 'certifications', 'certified', 'credential', 'credentials', 'badge', 'badges'],
+          text: "Claude Certified Architect Foundations (Anthropic, verified live on Credly), AWS Cloud Quest: GenAI Practitioner, Databricks GenAI Associate, Microsoft Fabric Lakehouse, and AWS Solutions Architect." },
+        { id: 'honours', title: 'Research & Academic Honours', tags: ['honour', 'honours', 'honors', 'award', 'awards', 'research', 'academic', 'telecom paris', 'acm', 'ntse', 'ham radio', 'bar', 'law', 'fun fact'],
+          text: "Télécom Paris Research Fellow (2008) in distributed multimedia systems; an ACM Multimedia 2008 publication; Pratibha Gold Medal & Scholarship; District Topper & Gold Medalist; NTSE National Scholar (top 1% in India); multiple hackathon championships; a licensed amateur radio operator (call sign VU2PDQ); and BAR qualified (AIBE 20), certified to practise law in India." },
+        { id: 'contact', title: 'Contact', tags: ['contact', 'email', 'phone', 'reach', 'linkedin', 'hire', 'connect', 'location', 'where'],
+          text: "Reach out at priyadarshan.iitk@gmail.com or +91 83413 46818, or connect on LinkedIn at linkedin.com/in/saipriya-cindula. Based in Hyderabad, India." },
+        { id: 'meta-bot', title: 'About this Q&A widget', tags: ['bot', 'chatbot', 'how does this work', 'rag bot', 'how do you work', 'who built this', 'yourself'],
+          text: "This widget is a tiny retrieval pipeline: your question is matched against profile content using keyword and term-frequency scoring, entirely in your browser — no external AI API, no data leaves your device. A deliberately lightweight nod to the Retrieval-Augmented Generation pattern used in production work above." }
+    ];
+
+    var STOPWORDS = {};
+    'a an the is are was were what whats how tell me about your you in on at for with and or do does did has have had of to my i please can could would should it that this who which s your'
+        .split(' ').forEach(function (w) { STOPWORDS[w] = true; });
+
+    function tokenize(str) {
+        return str.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .split(/\s+/)
+            .filter(function (t) { return t.length > 1 && !STOPWORDS[t]; });
+    }
+
+    function scoreChunk(chunk, queryTokens) {
+        var titleLower = chunk.title.toLowerCase();
+        var textLower = chunk.text.toLowerCase();
+        var score = 0;
+        queryTokens.forEach(function (tok) {
+            if (chunk.tags.indexOf(tok) !== -1) score += 3;
+            if (titleLower.indexOf(tok) !== -1) score += 2;
+            var re = new RegExp('\\b' + tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'g');
+            var m = textLower.match(re);
+            if (m) score += m.length;
+        });
+        return score;
+    }
+
+    function answerQuestion(question) {
+        var qTokens = tokenize(question);
+        if (!qTokens.length) return null;
+        var scored = KB.map(function (c) { return { chunk: c, score: scoreChunk(c, qTokens) }; })
+            .filter(function (s) { return s.score > 0; })
+            .sort(function (a, b) { return b.score - a.score; });
+        return scored.slice(0, 2).map(function (s) { return s.chunk; });
+    }
+
+    var chatWidget = document.getElementById('chatWidget');
+    var chatToggle = document.getElementById('chatToggle');
+    var chatPanel = document.getElementById('chatPanel');
+    var chatClose = document.getElementById('chatClose');
+    var chatChips = document.getElementById('chatChips');
+    var chatMessages = document.getElementById('chatMessages');
+    var chatForm = document.getElementById('chatForm');
+    var chatInput = document.getElementById('chatInput');
+
+    var SUGGESTED = [
+        "What's your current role?",
+        "Tell me about the NedBank project",
+        "What's your experience with Claude?",
+        "What certifications do you hold?",
+        "Where did you study?",
+        "What's your RAG tech stack?"
+    ];
+
+    SUGGESTED.forEach(function (q) {
+        var chip = document.createElement('div');
+        chip.className = 'chat-chip';
+        chip.textContent = q;
+        chip.addEventListener('click', function () { askAndRender(q); });
+        chatChips.appendChild(chip);
+    });
+
+    function addMessage(text, who) {
+        var div = document.createElement('div');
+        div.className = 'msg ' + who;
+        div.innerHTML = text;
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function askAndRender(question) {
+        addMessage(question, 'user');
+        var results = answerQuestion(question);
+        if (!results || !results.length) {
+            addMessage("I don't have that in my profile yet — try asking about <strong>experience</strong>, <strong>skills</strong>, <strong>certifications</strong>, <strong>education</strong>, or <strong>achievements</strong>.", 'bot');
+            return;
         }
-    };
+        var html = results.map(function (chunk) {
+            return '<strong>' + chunk.title + '</strong><br>' + chunk.text;
+        }).join('<br><br>');
+        addMessage(html, 'bot');
+    }
 
-    window.verifyCertificate = function (certId) {
-        var cert = certificates[certId];
-        if (!cert) return;
-        document.getElementById('verificationDetails').innerHTML =
-            '<strong>Certificate ID:</strong> ' + cert.credential + '<br>' +
-            '<strong>Name:</strong> ' + cert.name + '<br>' +
-            '<strong>Issuer:</strong> ' + cert.issuer + '<br>' +
-            '<strong>Issued:</strong> ' + cert.date + '<br>' +
-            '<strong>Expiry:</strong> ' + cert.expiry + '<br>' +
-            '<strong>SHA-256:</strong> ' + cert.hash;
-        document.getElementById('verificationModal').style.display = 'block';
-    };
+    chatToggle.addEventListener('click', function () {
+        chatPanel.classList.toggle('open');
+        if (chatPanel.classList.contains('open') && !chatMessages.childElementCount) {
+            addMessage("Hi! Ask me anything about Saipriyadarshan's experience, skills, or credentials — I'll search the profile content for you.", 'bot');
+        }
+    });
+    chatClose.addEventListener('click', function () { chatPanel.classList.remove('open'); });
 
-    window.closeVerification = function () {
-        document.getElementById('verificationModal').style.display = 'none';
-    };
+    chatForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var q = chatInput.value.trim();
+        if (!q) return;
+        askAndRender(q);
+        chatInput.value = '';
+    });
 
-    window.addEventListener('click', function (event) {
-        var modal = document.getElementById('verificationModal');
-        if (event.target === modal) modal.style.display = 'none';
+    document.addEventListener('click', function (e) {
+        if (!chatWidget.contains(e.target)) chatPanel.classList.remove('open');
     });
 })();
 </script>
