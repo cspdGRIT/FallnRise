@@ -665,7 +665,13 @@
 
 <!-- BACKGROUND AUDIO -->
 <audio id="bgMusic" loop crossorigin="anonymous">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- Use a royalty-free cinematic track -->
+    <!-- Option 1: Free Cinematic Music (Uncomment one) -->
+    <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+
+    <!-- Option 2: YouTube Audio Library (if available) -->
+    <!-- <source src="YOUR_AUDIO_FILE_URL_HERE" type="audio/mpeg"> -->
+
     Your browser does not support the audio element.
 </audio>
 
@@ -957,20 +963,46 @@
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     }
 
-    // Auto-mute initially (browser autoplay policy)
+    // Initialize audio settings
     bgMusic.volume = 0.3;
     volumeSlider.value = 30;
 
+    // Add error handling for audio
+    bgMusic.addEventListener('error', function(e) {
+        console.error('❌ Audio loading error:', e);
+        musicToggle.textContent = '⚠️';
+        musicToggle.title = 'Audio file not available';
+    });
+
+    bgMusic.addEventListener('canplay', function() {
+        console.log('✅ Audio loaded successfully');
+    });
+
+    console.log('🎵 Music player initialized - click 🔊 to play');
+
     // Generate QR Code
-    window.addEventListener('load', function() {
-        const qr = new QRCode(document.getElementById('qrcode'), {
-            text: 'https://saipriyadarshan.com\n📧 saipriyadarshan.c@zensar.com\n💼 AI/GenAI Architect',
-            width: 200,
-            height: 200,
-            colorDark: '#667eea',
-            colorLight: '#ffffff',
-            correctLevel: QRCode.CorrectLevel.H
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            try {
+                const qrcodeDiv = document.getElementById('qrcode');
+                if (qrcodeDiv && typeof QRCode !== 'undefined') {
+                    qrcodeDiv.innerHTML = ''; // Clear any existing content
+                    const qr = new QRCode(qrcodeDiv, {
+                        text: 'https://cspdgrit.github.io/FallnRise/\n📧 saipriyadarshan.c@zensar.com\n💼 AI/GenAI Architect & Engineer',
+                        width: 200,
+                        height: 200,
+                        colorDark: '#667eea',
+                        colorLight: '#ffffff',
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                    console.log('✅ QR Code generated successfully');
+                } else {
+                    console.error('❌ QR Code library not loaded or element not found');
+                }
+            } catch (error) {
+                console.error('QR Code error:', error);
+            }
+        }, 500);
     });
 
     // Certificate Verification System
